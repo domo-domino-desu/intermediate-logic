@@ -5,7 +5,7 @@ all: il-screen.pdf il-print.pdf il-print-cover.pdf index.html
 print: il-print.pdf
 
 %.pdf: %.tex olprevision.tex FORCE_MAKE
-	latexmk -dvi- -ps- -pdf $<
+	latexmk -dvi- -ps- -lualatex $<
 
 index.html: README.md  webpage-template.html il-screen.pdf
 	convert il-screen.pdf[0] il.png
@@ -15,5 +15,4 @@ clean:
 	latexmk -c il-screen.tex il-print.tex il-print-cover.tex
 
 olprevision.tex: FORCE_MAKE
-	../../misc/makeolprevision ../..
-
+	OpenLogic/misc/makeolprevision OpenLogic

@@ -1,0 +1,4 @@
+[submodule "OpenLogic"]
+	path = OpenLogic
+	url = https://github.com/domo-domino-desu/OpenLogic-20260823-zh.git
+	branch = master
