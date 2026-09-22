@@ -3,7 +3,7 @@
 % driver file ic.tex to produce text
 
 \preto\OLEndChapterHook{\IfFileExists{include/summary-\thechapter}
-        {\section*{Summary}\addcontentsline{toc}{section}{Summary}
+        {\section*{摘要}\addcontentsline{toc}{section}{摘要}
         \let\emph\textbf\input{include/summary-\thechapter}\let\emph\textit}{}}
 
 \problemsperchapter
@@ -21,7 +21,7 @@
 
 \olimport*[first-order-logic]{first-order-logic}
 
-\part{Incompleteness}\label{incompleteness}
+\part{不完全性}\label{incompleteness}
 
 \olimport*[incompleteness/introduction]{introduction}
 
@@ -41,7 +41,7 @@
 \let\OLEndChapterHook\SavedOLEndChapterHook
 \OLEndChapterHook
 
-\chapter{Models of Arithmetic}\label{mod:chap}
+\chapter{算术模型}\label{mod:chap}
 
 \olimport*[model-theory/models-of-arithmetic]{introduction}
 
@@ -74,9 +74,9 @@
 \stopproblems
 \def\ifproblems#1{}
 
-\def\figurename{Fig.}
+\def\figurename{图}
 
-\chapter{Biographies}\label{bios:chap}
+\chapter{传记}\label{bios:chap}
 
 \olimport*[history/biographies]{georg-cantor}
 

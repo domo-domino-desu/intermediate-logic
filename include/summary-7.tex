@@ -1,22 +1,16 @@
-The \emph{semantics} for a first-order language is given by a
-\emph{structure} for that language. It consists of a \emph{domain} and
-elements of that domain are assigned to each constant symbol. Function
-symbols are interpreted by functions and relation symbols by relation
-on the domain. A function from the set of variables to the domain is
-a \emph{variable assignment}. The relation of \emph{satisfaction}
-relates structures, variable assignments and formulas;
-$\Sat{M}{!A}[s]$ is defined by induction on the structure of~$!A$.
-$\Sat{M}{!A}[s]$ only depends on the interpretation of the symbols
-actually occurring in~$!A$, and in particular does not depend on $s$
-if $!A$ contains no free variables. So if $!A$ is a sentence,
-$\Sat{M}{!A}$ if $\Sat{M}{!A}[s]$ for any (or all)~$s$.
+一阶语言的\emph{语义}由该语言的一个\emph{结构}给出。
+它包含一个\emph{论域}，并为每个常项符号指派该论域中的元素。
+函数符号由函数来解释，关系符号则由论域上的关系来解释。
+从变元集合到论域的一个函数称为一个\emph{变元指派}。
+\emph{满足关系}将结构、变元指派和公式联系起来；
+$\Sat{M}{!A}[s]$ 通过对~$!A$ 的结构进行归纳来定义。
+$\Sat{M}{!A}[s]$ 仅依赖于实际出现在~$!A$ 中的符号的解释，
+特别地，如果 $!A$ 不含自由变元，则不依赖于 $s$。
+因此，如果 $!A$ 是一个语句，那么只要 $\Sat{M}{!A}[s]$ 对任意（或所有）~$s$ 成立，就有 $\Sat{M}{!A}$。
 
-The satisfaction relation is the basis for all semantic notions. A
-sentence is \emph{valid}, $\Sat{{}}{!A}$, if it is satisfied in every
-structure. A sentence $!A$ is \emph{entailed} by set of
-sentences~$\Gamma$, $\Gamma \Entails !A$, iff $\Sat{M}{!A}$ for all
-$\Struct{M}$ which satisfy every sentence in~$\Gamma$. A set~$\Gamma$
-is \emph{satisfiable} iff there is some structure that satisfies every
-sentence in~$\Gamma$, otherwise \emph{unsatisfiable}. These notions are
-interrelated, e.g., $\Gamma \Entails !A$ iff $\Gamma \cup \{\lnot
-!A\}$ is unsatisfiable.
+满足关系是所有语义概念的基础。
+一个语句是\emph{有效的}，记作 $\Sat{{}}{!A}$，如果它在每个结构中都被满足。
+语句集~$\Gamma$ \emph{语义地后承}语句 $!A$，记作 $\Gamma \Entails !A$，
+当且仅当所有满足~$\Gamma$ 中每一语句的 $\Struct{M}$ 都满足 $!A$。
+集合~$\Gamma$ 是\emph{可满足的}，当且仅当存在一个结构满足~$\Gamma$ 中的每一语句，否则就是\emph{不可满足的}。
+这些概念相互关联，例如，$\Gamma \Entails !A$ 当且仅当 $\Gamma \cup \{\lnot !A\}$ 不可满足。

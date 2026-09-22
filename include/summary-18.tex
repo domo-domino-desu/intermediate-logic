@@ -1,55 +1,12 @@
-The \textbf{first incompleteness theorem} states that for any
-consistent, !!{axiomatizable} theory~$\Th{T}$ that extends $\Th{Q}$,
-there is !!a{sentence}~$!G_\Th{T}$ such that $\Th{T} \Proves/
-!G_\Th{T}$. $!G_\Th{T}$ is constructed in such a way that $!G_\Th{T}$,
-in a roundabout way, says ``$\Th{T}$ does not prove~$!G_\Th{T}$.''
-Since $\Th{T}$ does not, in fact, prove it, what it says is true. If
-$\Sat{N}{\Th{T}}$, then $\Th{T}$ does not prove any false claims, so
-$\Th{T} \Proves/ \lnot !G_\Th{T}$. Such !!a{sentence} is
-\textbf{independent} or \textbf{undecidable} in~$\Th{T}$. G\"odel's
-original proof established that $!G_\Th{T}$ is independent on the
-assumption that $\Th{T}$ is \textbf{$\omega$-consistent}. Rosser
-improved the result by finding a different sentence~$!R_\Th{T}$ with
-is neither provable nor refutable in~$\Th{T}$ as long as $\Th{T}$ is
-simply consistent.
+\textbf{第一不完全性定理}指出，对于任何一致的、可公理化的且扩张~$\Th{Q}$ 的理论~$\Th{T}$，都存在一个语句~$!G_\Th{T}$，使得$\Th{T} \Proves/
+!G_\Th{T}$。$!G_\Th{T}$ 的构造方式使其迂回地陈述了"$\Th{T}$ 不能证明~$!G_\Th{T}$。"既然 $\Th{T}$ 实际上不能证明它，它所说的便是真的。如果 $\Sat{N}{\Th{T}}$，则 $\Th{T}$ 不证明任何假的断言，因此$\Th{T} \Proves/ \lnot !G_\Th{T}$。这样的语句在~$\Th{T}$中是\textbf{独立的}或\textbf{不可判定的}。G\"odel 最初的证明在 $\Th{T}$ 为\textbf{$\omega$-一致的}假设下确立了 $!G_\Th{T}$ 的独立性。Rosser（罗瑟）改进了这一结果，找到了另一个语句~$!R_\Th{T}$：只要 $\Th{T}$ 是简单一致的，该语句在~$\Th{T}$ 中就既不可证明也不可否证。
 
-The construction of~$!G_\Th{T}$ is effective: given an axiomatization
-of~$\Th{T}$ we could, in principle, write down~$!G_\Th{T}$. The
-``roundabout way'' in which $!G_\Th{T}$ states its own unprovability,
-is a special case of a general result, the \textbf{fixed-point
-  lemma}. It states that for any !!{formula}~$!B(y)$ in~$\Lang{L_A}$,
-there is !!a{sentence}~$!A$ such that $\Th{Q} \Proves !A \liff
-!B(\gn{!A})$. (Here, $\gn{!A}$ is the standard numeral for the G\"odel
-number of~$!A$, i.e., $\num{\Gn{!A}}$.)  To obtain $!G_\Th{T}$, we use
-the !!{formula}~$\lnot\OProv[\Th{T}](y)$ as~$!B(y)$.  We get
-$\OProv[\Th{T}]$ as the culmination of our previous efforts: We know
-that $\Prf[\Th{T}](n, m)$, which holds if $n$ is the G\"odel number of
-!!a{derivation} of the !!{sentence} with G\"odel number~$m$
-from~$\Th{T}$, is primitive recursive. We also know that $\Th{Q}$
-represents all primitive recursive relations, and so there is some
-!!{formula} $\OPrf[\Th{T}](x,y)$ that represents~$\Prf[\Th{T}]$
-in~$\Th{Q}$. The \textbf{provability predicate} for $\Th{T}$ is
-$\Prov[\Th{T}](y)$ is $\lexists[x][\Prf[\Th{T}](x, y)]$ then expresses
-provability in~$\Th{T}$. (It doesn't represent it though: if $\Th{T}
-\Proves !A$, then $\Th{Q} \Proves \OProv[\Th{T}](\gn{!A})$; but if
-$\Th{T} \Proves/ !A$, then $\Th{Q}$ does not in general prove $\lnot
-\OProv[\Th{T}](\gn{!A})$.)
+$!G_\Th{T}$ 的构造是能行的：给定~$\Th{T}$的一个公理化，原则上我们可以写出~$!G_\Th{T}$。$!G_\Th{T}$ 以迂回的方式陈述自身的不可证性，这一手法是一般性结果——\textbf{不动点引理}——的特例。该引理指出，对于 $\Lang{L_A}$ 中的任何公式~$!B(y)$，都存在一个语句~$!A$，使得$\Th{Q} \Proves !A \liff
+!B(\gn{!A})$。（这里，$\gn{!A}$ 是~$!A$ 的哥德尔数的标准数字，即 $\num{\Gn{!A}}$。）为了得到 $!G_\Th{T}$，我们使用公式~$\lnot\OProv[\Th{T}](y)$ 作为~$!B(y)$。我们先前的努力最终汇聚为 $\OProv[\Th{T}]$：我们知道 $\Prf[\Th{T}](n, m)$ 是原始递归的（当 $n$ 是从~$\Th{T}$ 推出哥德尔数为~$m$ 的语句的某个推导的哥德尔数时，该关系成立）。我们还知道 $\Th{Q}$ 表示所有原始递归关系，因此存在某个公式 $\OPrf[\Th{T}](x,y)$ 在~$\Th{Q}$ 中表示~$\Prf[\Th{T}]$。$\Th{T}$ 的\textbf{可证性谓词}为 $\Prov[\Th{T}](y)$，即 $\lexists[x][\Prf[\Th{T}](x, y)]$，它表达了 $\Th{T}$ 中的可证性。（但它并不表示可证性：如果 $\Th{T} \Proves !A$，那么 $\Th{Q} \Proves \OProv[\Th{T}](\gn{!A})$；但如果 $\Th{T} \Proves/ !A$，那么 $\Th{Q}$ 一般并不证明 $\lnot
+\OProv[\Th{T}](\gn{!A})$。）
 
-The \textbf{second incompleteness theorem} establishes that the
-!!{sentence}~$\OCon[\Th{T}]$ that expresses that $\Th{T}$ is
-consistent, i.e., $\Th{T}$ also does not prove $\lnot
-\OProv[\Th{T}](\gn{\lfalse})$.  The proof of the second incompleteness
-theorem requires some additional conditions on~$\Th{T}$, the
-\textbf{provability conditions}. $\Th{PA}$ satisfies them,
-although~$\Th{Q}$ does not. Theories that satisfy the provability
-conditions also satisfy \textbf{L\"ob's theorem}: $\Th{T} \Proves
-\OProv[\Th{T}](\gn{!A}) \lif !A$ iff $\Th{T} \Proves !A$.
+\textbf{第二不完全性定理}确立了：表达 $\Th{T}$ 一致性的语句~$\OCon[\Th{T}]$（即 $\Th{T}$ 不证明 $\lnot
+\OProv[\Th{T}](\gn{\lfalse})$）也是 $\Th{T}$ 所不能证明的。第二不完全性定理的证明需要对~$\Th{T}$ 附加一些条件，即\textbf{可证性条件}。$\Th{PA}$ 满足这些条件，而~$\Th{Q}$ 不满足。对于满足可证性条件的理论，\textbf{L\"ob（勒布）定理}也成立：$\Th{T} \Proves
+\OProv[\Th{T}](\gn{!A}) \lif !A$ 当且仅当 $\Th{T} \Proves !A$。
 
-The fixed-point theorem also has another important consequence. We say
-a relation $R(n)$ is \textbf{definable} in $\Lang{L_A}$ if there is
-!!a{formula}~$!A_R(x)$ such that $\Sat{N}{!A_R(\num{n})}$ iff $R(n)$
-holds. For instance, $\Prov[\Th{T}]$ is definable, since
-$\OProv[\Th{T}]$ defines it. The property $n$~has iff it is the
-G\"odel number of !!a{sentence} true in~$\Struct{N}$, however, is not
-definable. This is \textbf{Tarski's theorem} about the undefinability
-of truth.
+不动点定理还有另一个重要推论。如果存在公式~$!A_R(x)$ 使得 $\Sat{N}{!A_R(\num{n})}$ 当且仅当 $R(n)$ 成立，则称关系 $R(n)$ 在 $\Lang{L_A}$ 中是\textbf{可定义的}。例如，$\Prov[\Th{T}]$ 是可定义的，因为 $\OProv[\Th{T}]$ 定义了它。然而，$n$ 所具有的如下性质——即 $n$ 是在~$\Struct{N}$ 中为真的语句的哥德尔数——却是不可定义的。这就是关于真的不可定义性的\textbf{Tarski（塔斯基）定理}。

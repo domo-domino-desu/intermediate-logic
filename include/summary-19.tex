@@ -1,53 +1,28 @@
-A \textbf{model of arithmetic} is !!a{structure} for the
-language~$\Lang{L_A}$ of arithmetic.  There is one distinguished such
-model, the \textbf{standard model}~$\Struct{N}$, with $\Domain{N}
-= \Nat$ and interpretations of $\Obj 0$, $\prime$, $+$, $\times$, and
-$<$ given by $0$, the successor, addition, and multiplication
-functions on~$\Nat$, and the less-than relation. $\Struct{N}$ is a
-model of the theories $\Th{Q}$ and~$\Th{PA}$.
+\textbf{算术模型}是算术语言~$\Lang{L_A}$ 的一个结构。
+其中有一个特定的模型，即\textbf{标准模型}~$\Struct{N}$，其论域 $\Domain{N} = \Nat$，
+并且对 $\Obj 0$、$\prime$、$+$、$\times$ 和 $<$ 的解释分别由 $0$、$\Nat$ 上的后继函数、加法函数、乘法函数以及小于关系给出。
+$\Struct{N}$ 是理论 $\Th{Q}$ 和~$\Th{PA}$ 的模型。
 
-More generally, !!a{structure} for $\Lang{L_A}$ is
-called \textbf{standard} iff it is isomorphic to~$\Struct{N}$. Two
-!!{structure}s are isomorphic if there is an \textbf{isomorphism}
-between them, i.e., !!a{bijective} function which preserves the
-interpretations of !!{constant}s, !!{function}s, and !!{predicate}s.
-By the \textbf{isomorphism theorem}, isomorphic structures
-are \textbf{elementarily equivalent}, i.e., they make the same
-sentences true.  In standard models, the domain is just the set of
-values of all the numerals~$\num{n}$.
+更一般地，$\Lang{L_A}$ 的一个结构当且仅当同构于~$\Struct{N}$ 时称为\textbf{标准的}。
+如果两个结构之间存在一个\textbf{同构}，即一个保持常项符号、函数符号和谓词符号解释的双射函数，则它们是同构的。
+根据\textbf{同构定理}，同构的结构是\textbf{初等等价的}，也就是说，相同的语句在它们中都为真。
+在标准模型中，论域恰好就是所有数字符~$\num{n}$ 的值构成的集合。
 
-Models of $\Th{Q}$ and $\Th{PA}$ that are not isomorphic
-to~$\Struct{N}$ are called \textbf{non-standard}. In non-standard
-models, the domain is not exhausted by the values of the numerals.  An
-element $x \in \Domain{M}$ where $x \neq \Value{\num{n}}{M}$ for
-all~$n \in \Nat$ is called a \textbf{non-standard element}
-of~$\Struct{M}$.  If $\Sat{M}{\Th{Q}}$, non-standard elements must
-obey the axioms of~$\Th{Q}$, e.g., they have unique successors, they
-can be added and multiplied, and compared using~$<$. The standard
-elements of~$\Struct{M}$ are all $\Assign{<}{M}$ all the non-standard
-elements.  Non-standard models exist because of the compactness
-theorem, and for $\Th{Q}$ they can relatively easily be given
-explicitly. Such models can be used to show that, e.g., $\Th{Q}$ is
-not strong enough to prove certain !!{sentence}s, e.g.,
-$\Th{Q} \Proves/ \lforall[x][\lforall[y][\eq[(x+y)][(y+x)]]]$. This is
-done by defining a non-standard $\Struct{M}$ in which non-standard
-elements don't obey the law of commutativity.
+与~$\Struct{N}$ 不同构的 $\Th{Q}$ 和 $\Th{PA}$ 的模型被称为\textbf{非标准的}。
+在非标准模型中，论域不能被数字符的值穷尽。
+$\Struct{M}$ 中的一个元素 $x \in \Domain{M}$，若对所有~$n \in \Nat$ 都有 $x \neq \Value{\num{n}}{M}$，则称为~$\Struct{M}$ 的一个\textbf{非标准元素}。
+如果 $\Sat{M}{\Th{Q}}$，非标准元素也必须服从~$\Th{Q}$ 的公理，例如，它们有唯一的后继，可以进行加法和乘法运算，并且可以用~$<$ 来比较。
+$\Struct{M}$ 的所有标准元素按~$\Assign{<}{M}$ 都小于所有非标准元素。
+非标准模型的存在性由紧致性定理保证，并且对于 $\Th{Q}$，它们相对容易显式地构造出来。
+这样的模型可用来表明，比如 $\Th{Q}$ 不足以证明某些语句，例如 $\Th{Q} \Proves/ \lforall[x][\lforall[y][\eq[(x+y)][(y+x)]]]$。
+这是通过定义一个非标准模型 $\Struct{M}$ 来实现的，在该模型中，非标准元素不遵守交换律。
 
-Non-standard models of~$\Struct{PA}$ cannot be so easily specified
-explicitly. By showing that $\Th{PA}$ proves certain sentences, we can
-investigate the structure of the non-standard part of a non-standard
-model of~$\Th{PA}$. If a non-standard model~$\Struct{M}$ of~$\Th{PA}$
-is !!{enumerable}, every non-standard element is part of a ``block''
-of non-standard elements which are ordered like~$\Int$
-by~$\Assign{<}{M}$.  These blocks themselves are arranged like~$\Rat$,
-i.e., there is no smallest or largest block, and there is always a
-block in between any two blocks.
+$\Th{PA}$ 的非标准模型则不易如此显式地给出。
+通过表明 $\Th{PA}$ 可证某些语句，我们可以研究 $\Th{PA}$ 非标准模型中非标准部分的结构。
+如果 $\Th{PA}$ 的一个非标准模型~$\Struct{M}$ 是可数的，那么每个非标准元素都属于一个非标准元素的``块''，这些块中的元素在~$\Assign{<}{M}$ 下的序类似于~$\Int$。
+而这些块本身的排列方式则类似于~$\Rat$，也就是说，没有最小或最大的块，并且任意两个块之间总存在另一个块。
 
-Any !!{enumerable} model is isomorphic to one with domain~$\Nat$. If
-the interpretations of $\prime$, $+$, $\times$, and $<$ in such a
-model are computable functions, we say it is a \textbf{computable
-model}. The standard model~$\Struct{N}$ is computable, since the
-successor, addition, and multiplication functions and the less-than
-relation on~$\Nat$ are computable. It is possible to define computable
-non-standard models of~$\Th{Q}$, but $\Struct{N}$ is the only
-computable model of~$\Th{PA}$. This is \textbf{Tannenbaum's Theorem}.
+任何可数模型都同构于一个以~$\Nat$ 为论域的模型。
+如果这样一个模型中 $\prime$、$+$、$\times$ 和 $<$ 的解释是可计算函数，我们就称它为一个\textbf{可计算模型}。
+标准模型~$\Struct{N}$ 是可计算的，因为 $\Nat$ 上的后继函数、加法函数、乘法函数以及小于关系都是可计算的。
+定义 $\Th{Q}$ 的可计算非标准模型是可能的，但 $\Struct{N}$ 是 $\Th{PA}$ 唯一的可计算模型。这就是\textbf{Tannenbaum（坦纳鲍姆）定理}。

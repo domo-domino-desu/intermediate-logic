@@ -1,44 +1,20 @@
-In order to show that $\Th{Q}$ represents all computable functions, we
-need a precise model of computability that we can take as the basis
-for a proof.  There are, of course, many models of computability, such
-as Turing machines. One model that plays a significant role
-historically---it's one of the first models proposed, and is also the
-one used by G\"odel himself---is that of the \textbf{recursive
-functions}.  The recursive functions are a class of arithmetical
-functions---that is, their domain and range are the natural
-numbers---that can be defined from a few basic functions using a few
-operations. The basic functions are the constant zero function~$\Zero$
-($\Zero(x) = 0$), the immediate successor function~$\Succ$ ($\Succ(x)
-= x+1$), and the projection functions. The operations are
-\textbf{composition}, \textbf{primitive recursion}, and
-\textbf{regular minimization}. Composition is simply a general version
-of ``chaining together'' functions: first apply one, then apply the
-other to the result. Primitive recursion defines a new function~$f$
-from two functions $g$, $h$ already defined, by stipulating that the
-value of $f$ for $0$ is given by~$g$, and the value for any number
-$n+1$ is given by $h$ applied to $f(n)$. Functions that can be defined
-using just these two principles are called \textbf{primitive
-recursive}. A relation is primitive recursive iff its characteristic
-function is. It turns out that a whole list of interesting functions
-and relations are primitive recursive (such as addition,
-multiplication, exponentiation, divisibility), and that we can define
-new primitive recursive functions and relations from old ones using
-principles such as bounded quantification and bounded minimization. In
-particular, this allowed us to show that we can deal with
-\emph{sequences} of numbers in primitive recursive ways. That is,
-there is a way to ``code'' sequences of numbers as single numbers in
-such a way that we can compute the $i$-the element, the length, the
-concatenation of two sequences, etc., all using primitive recursive
-functions operating on these codes.  To obtain all the computable
-functions, we finally added definition by \textbf{regular
-minimization} to composition and primitive recursion.  A
-function~$g(x, y)$ is \textbf{regular} iff, for every~$y$ it takes the
-value~$0$ for at least one~$x$. If $f$ is regular, the least $x$ such
-that $g(x, y) = 0$ always exists, and can be found simply by computing
-all the values of $g(0, y)$, $g(1, y)$, etc., until one of them is $=
-0$. The resulting function~$f(y) = \umin{x}{g(x, y) = 0}$ is the
-function defined by regular minimization from $g$. It is always total
-and computable. The resulting set of functions are called
-\textbf{general recursive}.  One version of the Church-Turing Thesis
-says that the computable arithmetical functions are exactly the
-general recursive ones.
+为了证明 $\Th{Q}$ 能表示所有可计算函数，我们需要一个精确的可计算性模型作为证明的基础。
+当然，存在许多可计算性模型，例如 Turing（图灵）机。
+历史上起重要作用的模型之一——它是最早被提出的模型之一，也是 G\"odel 本人所使用的模型——是所谓的\textbf{递归函数}。
+递归函数是一类算术函数——也就是说，它们的定义域和值域都是自然数——它们可以由几个基本函数通过几种操作来定义。
+基本函数包括常零函数~$\Zero$（$\Zero(x) = 0$）、直接后继函数~$\Succ$（$\Succ(x) = x+1$）以及投影函数。
+操作包括\textbf{复合}、\textbf{原始递归}和\textbf{正则极小化}。
+复合简单来说就是函数``链接''的一般形式：先应用一个函数，再对所得结果应用另一个函数。
+原始递归从两个已定义的函数 $g$、$h$ 出发定义新函数~$f$，规定 $f$ 在 $0$ 处的值由~$g$ 给出，而在任意数 $n+1$ 处的值由 $h$ 应用于 $f(n)$ 给出。
+仅用这两个原理定义的函数称为\textbf{原始递归的}。
+一个关系是原始递归的，当且仅当其示性函数是原始递归的。
+事实上，一大批有趣的函数和关系都是原始递归的（例如加法、乘法、指数运算、整除性），并且我们可以用诸如有界量化和有界极小化等原理，从已有的原始递归函数和关系定义出新的函数和关系。
+特别地，这使得我们能够证明，可以用原始递归的方式处理数的\emph{序列}。
+也就是说，存在一种将数列``编码''为单个数的方法，使得我们可以利用作用在这些编码上的原始递归函数来计算第 $i$ 个元素、序列的长度、两个序列的连接等等。
+为了得到所有可计算函数，我们最终在复合和原始递归的基础上增加了通过\textbf{正则极小化}进行的定义。
+函数~$g(x, y)$ 是\textbf{正则}的，当且仅当对每个~$y$，它至少对一个~$x$ 取值为~$0$。
+如果 $g$ 是正则的，那么使得 $g(x, y) = 0$ 的最小 $x$ 总是存在的，并且可以通过计算 $g(0, y)$、$g(1, y)$ 等等直到其中一个等于 $0$ 来找到。
+由此得到的函数~$f(y) = \umin{x}{g(x, y) = 0}$ 就是从 $g$ 通过正则极小化定义的函数。
+它总是全函数且可计算。
+由此得到的函数称为\textbf{一般递归的}。
+Church（邱奇）-Turing 论题的一个版本指出，可计算算术函数恰好就是一般递归函数。

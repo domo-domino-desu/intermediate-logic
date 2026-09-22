@@ -1,35 +1,24 @@
-The \emph{completeness theorem} is the converse of the \emph{soundness
-  theorem}. In one form it states that if $\Gamma \Entails !A$ then
-$\Gamma \Proves !A$, in another that if $\Gamma$ is consistent then it
-is satisfiable. We proved the second form (and derived the first from
-the second). The proof is involved and requires a number of steps. We
-start with a consistent set~$\Gamma$. First we add infinitely many
-new constant symbols~$c_i$ as well as formulas of the form
-$\lexists[x][!A(x)] \lif !A(c)$ where each formula~$!A(x)$ with a free
-variable in the expanded language is paired with one of the new
-constants. This results in a \emph{saturated} consistent set of
-sentences containing~$\Gamma$. It is still consistent. Now we take
-that set and extend it to a \emph{complete consistent set}. A
-complete consistent set has the nice property that for any
-sentence~$!A$, either $!A$ or $\lnot !A$ is in the set (but never
-both). Since we started from a saturated set, we now have a saturated,
-complete, consistent set of sentences~$\Gamma^*$ that
-includes~$\Gamma$. From this set it is now possible to define a
-structure~$\Struct{M}$ such that $\Sat{M(\Gamma^*)}{!A}$ iff
-$!A \in \Gamma^*$. In particular, $\Sat{M(\Gamma^*)}{\Gamma}$, i.e.,
-$\Gamma$ is satisfiable. If $=$ is present, the construction is
-slightly more complex.
+\emph{完备性定理}是\emph{可靠性定理}的逆命题。
+它的一种形式是：若 $\Gamma \Entails !A$ 则 $\Gamma \Proves !A$；
+另一种形式是：若 $\Gamma$ 是一致的，则它是可满足的。
+我们证明了第二种形式（并从第二种形式推导出了第一种形式）。
+该证明较为复杂，需要多个步骤。
+我们从一致集合~$\Gamma$ 出发。
+首先，我们添加无穷多个新的常项符号~$c_i$，以及形如 $\lexists[x][!A(x)] \lif !A(c)$ 的公式，其中扩充后的语言中每个带自由变元的公式~$!A(x)$ 都与一个新常项配对。
+这样就得到了一个包含~$\Gamma$ 的\emph{饱和的}一致语句集。
+它仍然是一致的。
+接着，我们取这个集合并将其扩充为一个\emph{完全一致集}。
+完全一致集具有良好的性质：对任何语句~$!A$，要么 $!A$ 在集合中，要么 $\lnot !A$ 在集合中（但绝不会二者皆在其中）。
+由于我们是从饱和集出发的，现在我们就得到了一个包含~$\Gamma$ 的饱和、完全、一致的语句集~$\Gamma^*$。
+现在，从这个集合可以定义一个结构~$\Struct{M}$，使得 $\Sat{M(\Gamma^*)}{!A}$ 当且仅当 $!A \in \Gamma^*$。
+特别地，$\Sat{M(\Gamma^*)}{\Gamma}$，即 $\Gamma$ 是可满足的。
+如果语言中包含 $=$，构造会稍复杂一些。
 
-Two important corollaries follow from the completeness theorem. The
-\emph{compactness theorem} states that $\Gamma \Entails !A$ iff
-$\Gamma_0 \Entails !A$ for some finite $\Gamma_0 \subseteq \Gamma$. An
-equivalent formulation is that $\Gamma$ is satisfiable iff every
-finite $\Gamma_0 \subseteq \Gamma$ is satisfiable. The compactness
-theorem is useful to prove the existence of structures with certain
-properties. For instance, we can use it to show that there are
-infinite models for every theory which has arbitrarily large finite
-models. This means in particular that finitude cannot be expressed in
-first-order logic. The second corollary, the \emph{L\"owenheim-Skolem
-  Theorem}, states that every satisfiable $\Gamma$ has a countable
-model. It in turn shows that uncountability cannot be expressed in
-first-order logic.
+从完备性定理可以得出两个重要推论。
+\emph{紧致性定理}指出：$\Gamma \Entails !A$ 当且仅当存在某个有限子集 $\Gamma_0 \subseteq \Gamma$ 使得 $\Gamma_0 \Entails !A$。
+一个等价的表述是：$\Gamma$ 是可满足的当且仅当每个有限子集 $\Gamma_0 \subseteq \Gamma$ 都是可满足的。
+紧致性定理可用于证明具有特定性质的结构的存在性。
+例如，我们可以用它证明：对于每个具有任意大有穷模型的理论，都存在无穷模型。
+这尤其意味着，\emph{有穷性}无法在一阶逻辑中表达。
+第二个推论是\emph{L\"owenheim-Skolem 定理}（勒文海姆-斯科伦），它指出：每个可满足的 $\Gamma$ 都有一个可数模型。
+这进而表明，\emph{不可数性}也无法在一阶逻辑中表达。

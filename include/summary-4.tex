@@ -1,36 +1,22 @@
-The size of a set~$A$ can be measured by a natural number if the set
-is finite, and sizes can be compared by comparing these numbers. If sets
-are infinite, things are more complicated. The first level of
-infinity is that of \emph{countably infinite} sets. A set~$A$ is
-countable if its elements can be arranged in an \emph{enumeration}, a
-one-way infinite list, i.e., when there is a
-surjective function~$f\colon \PosInt \to A$. It is countably infinite
-if it is countable but not finite. Cantor's \emph{zig-zag method}
-shows that the sets of pairs of elements of countably infinite sets is
-also countable; and this can be used to show that even the set of
-rational numbers~$\Rat$ is countable.
+如果一个集合~$A$ 是有限的，则它的大小可以用一个自然数来度量，而比较大小只需比较这些数即可。
+若集合是无穷的，情况就复杂了。
+无穷的第一个层级是\emph{可数无穷}集合。
+如果集合~$A$ 的元素可以排列成一个\emph{枚举}——一个单向无穷的列表，即存在一个满射函数~$f\colon \PosInt \to A$，则称~$A$ 是\emph{可数的}。
+如果一个集合可数但非有限，则它是\emph{可数无穷的}。
+Cantor（康托尔）的\emph{之字形方法}表明，由可数无穷集合的元素对构成的集合也是可数的；
+这可以用来证明，甚至有理数集~$\Rat$ 也是可数的。
 
-There are, however, infinite sets that are not countable: these sets
-are called \emph{uncountable}. There are two ways of showing that a
-set is uncountable: directly, using a \emph{diagonal argument}, or by
-\emph{reduction}. To give a diagonal argument, we assume that the
-set~$A$ in question is countable, and use a hypothetical enumeration
-to define an element of~$A$ which, by the very way we define it, is
-guaranteed to be different from every element in the enumeration. So
-the enumeration can't be an enumeration of all of~$A$ after all, and
-we've shown that no enumeration of~$A$ can exist. A reduction shows
-that $A$ is uncountable by associating every element of~$A$ with an
-element of some known uncountable set~$B$ in a surjective way. If
-this is possible, than a hypothetical enumeration of $A$ would yield
-an enumeration of~$B$. Since $B$ is uncountable, no enumeration of~$A$
-can exist.
+然而，存在不可数的无穷集合：这样的集合称为\emph{不可数的}。
+证明一个集合不可数有两种方法：直接使用\emph{对角论证}，或者通过\emph{归约}。
+要给出对角论证，我们假设所讨论的集合~$A$ 是可数的，并利用一个假想的枚举来定义~$A$ 的一个元素；
+按照我们的定义方式，该元素必定不同于枚举中的每一个元素。
+因此，该枚举终究不能枚举~$A$ 的全部元素，从而我们证明了~$A$ 不可能存在枚举。
+而归约则通过以满射的方式将~$A$ 的每个元素与某个已知的不可数集~$B$ 的元素关联起来，来证明~$A$ 是不可数的。
+若能做到这一点，则~$A$ 的一个假想枚举就会产生~$B$ 的一个枚举。
+由于~$B$ 是不可数的，~$A$ 不可能存在枚举。
 
-In general, infinite sets can be compared sizewise: $A$ and $B$ are
-the same size, or \emph{equinumerous}, if there is a bijection between
-them. We can also define that $A$ is no larger than~$B$
-($\cardle{A}{B}$) if there is an injective function from $A$ to~$B$.
-By the Schr\"oder-Bernstein Theorem, this in fact provides a sizewise
-order of infinite sets. Finally, \emph{Cantor's theorem} says that for
-any $A$, $\cardless{A}{\Pow{A}}$. This is a generalization of our
-result that $\Pow{\PosInt}$ is uncountable, and shows that there are
-not just two, but infinitely many levels of infinity.
+一般而言，无穷集合的大小是可以比较的：如果~$A$ 和~$B$ 之间存在一个双射，则称它们大小相同，或\emph{等势}。
+我们还可以定义，如果存在一个从~$A$ 到~$B$ 的单射函数，则~$A$ 不大于~$B$（记作~$\cardle{A}{B}$）。
+根据 Schr\"oder-Bernstein 定理，这实际上确立了无穷集合之间按大小比较的序关系。
+最后，\emph{康托尔定理}指出，对任意~$A$，都有~$\cardless{A}{\Pow{A}}$。
+这推广了我们关于~$\Pow{\PosInt}$ 不可数的结果，并表明无穷的层级不止两个，而是有无穷多个。

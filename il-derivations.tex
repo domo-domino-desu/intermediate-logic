@@ -1,39 +1,22 @@
+\chapter{算术理论中的推导}
 
-\chapter{Derivations in Arithmetic Theories}
+当我们证明所有一般递归函数在~$\Th{Q}$中可表示时，以及在不完全性定理的证明中，我们声称了各种事实在$\Th{Q}$和~$\Th{PA}$中可证。然而，对这些声称的证明只是非形式地给出了论证，没有展示自然演绎中的实际推导。我们在本章提供其中一些推导。
 
-When we showed that all general recursive functions are representable
-in~$\Th{Q}$, and in the proofs of the incompleteness theorems, we
-claimed that various things are provable in $\Th{Q}$ and~$\Th{PA}$. The
-proofs of these claims, however, just gave the arguments informally
-without exhibiting actual !!{derivation}s in natural deduction. We provide
-some of these !!{derivation}s in this capter.
+例如，在 \olref[inc][req][bre]{lem:q-proves-add} 中，我们证明了对于所有 $n$ 和 $m \in \Nat$，$\Th{Q} \Proves (\num{n} +
+\num{m}) = \num{n+m}$。我们通过对 $m$ 归纳证明了这一点。
 
-For instance, in \olref[inc][req][bre]{lem:q-proves-add} we proved
-that, for all $n$ and $m \in \Nat$, $\Th{Q} \Proves (\num{n} +
-\num{m}) = \num{n+m}$. We did this by induction on $m$.
-
-\begin{proof}[Proof of {\olref[inc][req][bre]{lem:q-proves-add}}]
-Base case: $m = 0$. Then what has to be proved is that, for all $n$,
-$\Th{Q} \Proves \num{n} + \num{0} = \num{n+0}$. Since $\num{0}$ is
-just $\Obj 0$ and $\num{n+0}$ is $\num{n}$, this amounts to showing
-that $\Th{Q} \Proves (\num{n} + \Obj 0) = \num{n}$. The !!{derivation}
+\begin{proof}[{\olref[inc][req][bre]{lem:q-proves-add}}的证明]
+基始情况：$m = 0$。那么需要证明的是，对所有 $n$，$\Th{Q} \Proves \num{n} + \num{0} = \num{n+0}$。由于 $\num{0}$ 就是 $\Obj 0$，而 $\num{n+0}$ 是 $\num{n}$，这便归结为证明 $\Th{Q} \Proves (\num{n} + \Obj 0) = \num{n}$。推导
 \begin{prooftree}
   \AxiomC{$\lforall[x][(x + \Obj 0) = x]$}
   \RightLabel{\Elim\lforall}
   \UnaryInfC{$(\num{n} + \Obj 0) = \num{n}$}
 \end{prooftree}
-is a natural deduction !!{derivation} of $(\num{n} + \Obj 0) = \num{n}$
-with one undischarged assumption, and that undischarged assumption is
-an axiom of~$\Th{Q}$.
+是一个自然演绎推导，其结论是 $(\num{n} + \Obj 0) = \num{n}$，带有一个未解除的假设，而该未解除的假设正是~$\Th{Q}$ 的一条公理。
 
-Inductive step: Suppose that, for any $n$, $\Th{Q} \Proves (\num{n} +
-\num{m}) = \num{n+m}$ (say, by !!a{derivation} $\delta_{n,m}$). We have
-to show that also $\Th{Q} \Proves (\num{n} + \num{m+1}) =
-\num{n+m+1}$. Note that $\num{m+1} \ident \num{m}'$, and that
-$\num{n+m+1} \ident \num{n+m}'$. So we are looking for !!a{derivation} of
-$(\num{n} + \num{m}') = \num{n+m}'$ from the axioms of~$\Th{Q}$. Our
-!!{derivation}may use the !!{derivation} $\delta_{n,m}$ which exists by inductive
-hypothesis.
+归纳步骤：假设对任意 $n$，$\Th{Q} \Proves (\num{n} +
+\num{m}) = \num{n+m}$（比如说，通过某个推导 $\delta_{n,m}$）。我们需要证明 $\Th{Q} \Proves (\num{n} + \num{m+1}) =
+\num{n+m+1}$ 也成立。注意 $\num{m+1} \ident \num{m}'$，且 $\num{n+m+1} \ident \num{n+m}'$。因此，我们寻找从~$\Th{Q}$ 的公理到 $(\num{n} + \num{m}') = \num{n+m}'$ 的一个推导。我们的推导可以利用归纳假设所给出的推导 $\delta_{n,m}$。
 \begin{prooftree}
   \AxiomC{}
   \RightLabel{$\delta_{n,m}$}
@@ -46,21 +29,18 @@ hypothesis.
     \RightLabel{\Elim=}
     \BinaryInfC{$(\num{n}+\num{m}') = \num{n+m}'$}
 \end{prooftree}
-In the last $\Elim=$ inference, we replace the subterm $\num{n} +
-\num{m}$ of the right side $(\num{n} + \num{m})'$ of the right premise
-by the term $\num{n+m}$.
+在最后的 $\Elim=$ 推理中，我们将右前提的右侧 $(\num{n} + \num{m})'$ 中的子项 $\num{n} + \num{m}$ 替换为项 $\num{n+m}$。
 \end{proof}
 
-In \olref[inc][req][min]{lem:less-zero}, we showed that $\Th{Q} \Proves
-\lforall[x][\lnot x < \Obj 0]$. What does an actual !!{derivation} look like?
+在 \olref[inc][req][min]{lem:less-zero} 中，我们证明了 $\Th{Q} \Proves
+\lforall[x][\lnot x < \Obj 0]$。实际的推导看起来是怎样的？
 
-\begin{proof}[Proof of {\olref[inc][req][min]{lem:less-zero}}]
-To prove a universal claim like this, we use $\Intro\lforall$, which
-requires !!a{derivation} of $\lnot a < \Obj 0$. Looking at axiom $!Q_8$,
-this means proving $\lnot \exists z (z' + a) = \Obj 0$. Specifically,
-if we had a proof of the latter, $!Q_8$ would allow us to prove the
-former (recall that $A \liff B$ is short for $(A \lif B) \land (B \lif
-A)$.
+\begin{proof}[{\olref[inc][req][min]{lem:less-zero}}的证明]
+要证明这样的全称命题，我们使用 $\Intro\lforall$，
+这需要推导出 $\lnot a < \Obj 0$。考察公理 $!Q_8$，
+这意味着证明 $\lnot \exists z (z' + a) = \Obj 0$。具体来说，
+如果我们有后者的证明，$!Q_8$ 就能让我们证明前者（回忆一下，$A \liff B$ 是 $(A \lif B) \land (B \lif
+A)$ 的缩写）。
 \begin{prooftree}\footnotesize
   \AxiomC{$\lnot\lexists[z][(z' + a) = \Obj 0]$}
   \AxiomC{$\lforall[x][\lforall[y][(x < y \liff \lexists[z][(z' + x) = y])]]$}
@@ -79,21 +59,19 @@ A)$.
   \DischargeRule{\Intro\lnot}{1}
   \UnaryInfC{$\lnot a<\Obj 0$}
 \end{prooftree}
-This is !!a{derivation} of $\lnot a<\Obj 0$ from $\lnot\lexists[z][(z' +
-a) = \Obj 0]$ (and~$!Q_8$); let's call it~$\delta_1$.
+这是一个从 $\lnot\lexists[z][(z' +
+a) = \Obj 0]$（和~$!Q_8$）推出 $\lnot a<\Obj 0$ 的推导；我们称它为~$\delta_1$。
 
-Now how do we prove $\lnot\lexists[z][(z' + a) = \Obj 0]$ from the
-axioms of~$\Th{Q}$? To prove a negated claim like this, we'd need
-!!a{derivation} of the form
+那么，我们如何从~$\Th{Q}$ 的公理出发来证明 $\lnot\lexists[z][(z' + a) = \Obj 0]$ 呢？
+要证明这样的否定式，我们需要一个如下形式的推导：
 \begin{prooftree}
   \AxiomC{$\Discharge{\lexists[z][(z' + a) = \Obj 0]}{2}$}
   \DeduceC{$\lfalse$}
   \DischargeRule{\Intro\lnot}{2}
   \UnaryInfC{$\lnot\lexists[z][(z' + a) = \Obj 0]$}
   \end{prooftree}
-To get a contradiction from an existential claim, we introduce a
-constant~$b$ for the existentially quantified variable~$z$ and use
-\Elim\lexists:
+为了从一个存在命题推出矛盾，我们为存在量词约束的变元~$z$ 引入一个常项~$b$ 并使用
+\Elim\lexists：
 \begin{prooftree}
   \AxiomC{$\Discharge{\lexists[z][(z' + a) = \Obj 0]}{2}$}
   \AxiomC{$\Discharge{(b'+a) = \Obj 0}{3}$}
@@ -104,24 +82,22 @@ constant~$b$ for the existentially quantified variable~$z$ and use
   \DischargeRule{\Intro\lnot}{2}
   \UnaryInfC{$\lnot\lexists[z][(z' + a) = \Obj 0]$}
   \end{prooftree}
-Now the task is to fill in $\delta_2$, i.e., prove $\lfalse$ from
-$(b'+a) = \Obj 0$ and the axioms of~$\Th{Q}$. $Q_2$ says that $\Obj 0$
-can't be the successor of some number, so one way of doing that would
-be to show that $(b' + a)$ is equal to the successor of some number.
-Since that expression itself is a sum, the axioms for addition must
-come into play. If $\eq[a][\Obj 0]$, $Q_5$ would tell us that $\eq[(b'
-+ a)][b']$, i.e., $b' + a$ is the successor of some number, namely
-of~$b$. On the other hand, if $\eq[a][c']$ for some $c$, then
-$\eq[(b'+a)][(b'+c')]$ by \Elim\eq, and $\eq[(b'+c')][(b'+c)']$
-by~$Q_6$. So again, $b'+a$ is the successor of a number---in this
-case, $b'+c$. So the strategy is to divide the task into these two
-cases. We also have to verify that $\Th{Q}$ proves that one of these
-cases holds, i.e., $\Th{Q} \Proves a = 0 \lor \lexists[y][(a = y')]$,
-but this follows directly from $Q_3$ by \Elim\lforall. Here are the
-two cases:
+现在的任务是填充 $\delta_2$，即从
+$(b'+a) = \Obj 0$ 和~$\Th{Q}$ 的公理出发证明 $\lfalse$。
+$Q_2$ 说 $\Obj 0$ 不可能是某个数的后继，所以一种方法是证明 $(b' + a)$ 等于某个数的后继。
+因为这个表达式本身是一个和，所以关于加法的公理必定会起作用。
+如果 $\eq[a][\Obj 0]$，则 $Q_5$ 会告诉我们 $\eq[(b'
++ a)][b']$，也就是说，$b' + a$ 是某个数（即~$b$）的后继。
+另一方面，如果对某个 $c$ 有 $\eq[a][c']$，那么
+根据 \Elim\eq 可得 $\eq[(b'+a)][(b'+c')]$，再根据~$Q_6$ 可得 $\eq[(b'+c')][(b'+c)']$。
+这样，$b'+a$ 再次是一个数的后继——在这种情况下是 $b'+c$。
+因此，策略就是将任务分成这两种情况。
+我们还必须验证 $\Th{Q}$ 能证明其中一种情况成立，即 $\Th{Q} \Proves a = 0 \lor \lexists[y][(a = y')]$，
+但这可直接由 $Q_3$ 通过 \Elim\lforall 得出。
+以下是两种情况：
 
-Case 1: Prove $\lfalse$ from $\eq[a][\Obj 0]$ and $\eq[(b'+a)][\Obj
-  0]$ (and axioms $Q_2$, $Q_5$):
+情况 1：从 $\eq[a][\Obj 0]$ 和 $\eq[(b'+a)][\Obj
+  0]$（以及公理 $Q_2$、$Q_5$）推出 $\lfalse$：
 \begin{prooftree}\footnotesize
   \AxiomC{$\lforall[x][\lnot \Obj 0 = x']$}
   \RightLabel{\Elim\lforall}
@@ -141,13 +117,11 @@ Case 1: Prove $\lfalse$ from $\eq[a][\Obj 0]$ and $\eq[(b'+a)][\Obj
   \RightLabel{\Elim\lnot}
   \BinaryInfC{$\lfalse$}
 \end{prooftree}
-Call this !!{derivation}~$\delta_3$. (We've abbreviated the !!{derivation} of
-$\Obj 0 = (b' + \Obj 0)$ from $(b' + \Obj 0) = \Obj 0$ by a double
-inference line.)
+称此推导为~$\delta_3$。（我们用双线简写了从 $(b' + \Obj 0) = \Obj 0$ 推出 $\Obj 0 = (b' + \Obj 0)$ 的推导。）
 
-Case 2: Prove $\lfalse$ from $\lexists[y][a = y']$ and
-$\eq[(b'+a)][\Obj 0]$ (and axioms $Q_2$, $Q_6$). We first show how to
-derive $\lfalse$ from $\eq[a][c']$ and $\eq[(b'+a)][\Obj 0]$.
+情况 2：从 $\lexists[y][a = y']$ 和
+$\eq[(b'+a)][\Obj 0]$（以及公理 $Q_2$、$Q_6$）推出 $\lfalse$。
+我们首先展示如何从 $\eq[a][c']$ 和 $\eq[(b'+a)][\Obj 0]$ 推出 $\lfalse$。
 \begin{prooftree}\footnotesize
   \AxiomC{$\lforall[x][\lnot \Obj 0 = x']$}
   \RightLabel{\Elim\lforall}
@@ -169,8 +143,7 @@ derive $\lfalse$ from $\eq[a][c']$ and $\eq[(b'+a)][\Obj 0]$.
           \insertBetweenHyps{\hskip -.5em}
   \BinaryInfC{$\lfalse$}
 \end{prooftree}
-Call this $\delta_4$. We get the required !!{derivation} $\delta_5$ by
-applying $\Elim\lexists$ and discharging the assumption $\eq[a][c']$:
+称此为 $\delta_4$。我们通过应用 $\Elim\lexists$ 并解除假设 $\eq[a][c']$ 来得到所需的推导 $\delta_5$：
 \begin{prooftree}
   \AxiomC{$\lexists[y][a=y']$}
   \AxiomC{$\Discharge{a = c'}{6} \quad \eq[(b'+a)][\Obj 0]$}
@@ -181,7 +154,7 @@ applying $\Elim\lexists$ and discharging the assumption $\eq[a][c']$:
 \end{prooftree}
 
   
-Putting everything together, the full proof looks like this:
+把所有部分组合起来，完整的证明如下所示：
 \begin{prooftree}\footnotesize
   \AxiomC{$\Discharge{\lexists[z][(z' + a) = \Obj 0]}{2}$}
   \AxiomC{$\begin{gathered}
@@ -219,32 +192,21 @@ Putting everything together, the full proof looks like this:
 \end{prooftree}
 \end{proof}
 
-In the proof of \olref[inc][inp][ros]{thm:rosser}, we defined
-$\ORProv(y)$ as \[\lexists[x][(\OPrf(x, y) \land \lforall[z][(z < x
-    \lif \lnot \ORefut(z, y))])].\] $\OPrf(x,y)$ is the formula
-representing the proof relation of~$\Th{T}$ (a consistent,
-axiomatizable extension of~$\Th{Q}$) in $\Th{Q}$, and $\ORefut(z, y)$
-is the formula representing the refutation relation. That means that
-if $n$ is the G\"odel number of a proof of~$!A$, then $\Th{Q} \Proves
-\OPrf(\num{n}, \gn{!A})$, and otherwise $\Th{Q} \Proves
-\lnot\OPrf(\num{n}, \gn{!A})$. Similarly, if $n$ is the G\"odel number
-of a proof of $\lnot !A$, then $\Th{Q} \Proves \ORefut(\num{n},
-\gn{!A})$, and otherwise $\Th{Q} \Proves \lnot\ORefut(\num{n},
-\gn{!A})$. We use the Diagonal Lemma to find a sentence $!R$ such that
-$\Th{Q} \Proves !R \liff \lnot \ORProv(\gn{!R})$. Rosser's Theorem
-states that $\Th{T} \Proves/ !R$ and $\Th{T} \Proves/ \lnot !R$. Both
-claims were proved indirectly: we show that if $\Th{T} \Proves !R$,
-$\Th{T}$ is inconsistent, i.e., $\Th{T} \Proves \lfalse$, and the same
-if $\Th{T} \Proves \lnot !R$. 
+在 \olref[inc][inp][ros]{thm:rosser} 的证明中，我们将 $\ORProv(y)$ 定义为 \[\lexists[x][(\OPrf(x, y) \land \lforall[z][(z < x
+    \lif \lnot \ORefut(z, y))])].\]，其中 $\OPrf(x,y)$ 是在 $\Th{Q}$ 中表示 $\Th{T}$（一个一致、可公理化的 $\Th{Q}$ 扩张）的证明关系的公式，而 $\ORefut(z, y)$ 是表示反驳关系的公式。这意味着，如果 $n$ 是 $!A$ 的一个证明的哥德尔数，那么 $\Th{Q} \Proves
+\OPrf(\num{n}, \gn{!A})$，否则 $\Th{Q} \Proves
+\lnot\OPrf(\num{n}, \gn{!A})$。类似地，如果 $n$ 是 $\lnot !A$ 的一个证明的哥德尔数，那么 $\Th{Q} \Proves \ORefut(\num{n},
+\gn{!A})$，否则 $\Th{Q} \Proves \lnot\ORefut(\num{n},
+\gn{!A})$。我们使用对角线引理找到一个语句 $!R$，使得 $\Th{Q} \Proves !R \liff \lnot \ORProv(\gn{!R})$。Rosser 定理断言 $\Th{T} \Proves/ !R$ 且 $\Th{T} \Proves/ \lnot !R$。两个结论都是间接证明的：我们证明，如果 $\Th{T} \Proves !R$，则 $\Th{T}$ 不一致，即 $\Th{T} \Proves \lfalse$；同样，如果 $\Th{T} \Proves \lnot !R$，也是如此。
 
 \begin{proof}[Proof of {\olref[inc][inp][ros]{thm:rosser}}]
-First we prove something things about~$<$. By
-\olref[inc][req][min]{lem:less-nsucc}, we know that $\Th{Q} \Proves
+首先我们证明关于~$<$ 的一些事实。由
+\olref[inc][req][min]{lem:less-nsucc}，我们知道对每个~$n$ 都有 $\Th{Q} \Proves
 \lforall[x][(x < \num {n+1} \lif (\eq[x][\Obj 0] \lor \dots \lor
-  \eq[x][\num n]))]$ for every~$n$. So of course also (if $n>1$),
+  \eq[x][\num n]))]$。所以当然也有（若 $n>1$）：
 $\Th{Q} \Proves \lforall[x][(x < \num {n} \lif (\eq[x][\Obj 0] \lor
-  \dots \lor \eq[x][\num{n-1}]))]$. We can use this to derive
-$\eq[a][\Obj 0] \lor \dots \lor \eq[a][\num{n-1}]$ from $a < \num{n}$:
+  \dots \lor \eq[x][\num{n-1}]))]$。我们可以利用它从 $a < \num{n}$ 推导出
+$\eq[a][\Obj 0] \lor \dots \lor \eq[a][\num{n-1}]$：
 \begin{prooftree}
   \AxiomC{$a < \num{n}$}
   \AxiomC{}
@@ -256,18 +218,15 @@ $\eq[a][\Obj 0] \lor \dots \lor \eq[a][\num{n-1}]$ from $a < \num{n}$:
   \RightLabel{\Elim\lif}
   \BinaryInfC{$a = \num{0} \lor \dots \lor a = \num{n-1}$}
 \end{prooftree}
-Let's call this !!{derivation} $\lambda_1$.
+我们把这个推导叫做 $\lambda_1$。
 
-Now, to show that $\Th{T} \Proves/ !R$, we assume that $\Th{T}
-\Proves !R$ (with !!a{derivation}~$\delta$) and show that $\Th{T}$ then
-would be inconsistent. Let $n$ be the G\"odel number
-of~$\delta$. Since $\OPrf$ represents the proof relation in~$\Th{Q}$,
-there is !!a{derivation}~$\delta_1$ of $\OPrf(\num{n},
-\gn{!R})$. Furthermore, no $k < n$ is the G\"odel number of a
-refutation of~$!R$ since $\Th{T}$ is assumed to be consistent, so for
-each $k < n$, $\Th{Q} \Proves \lnot \ORefut(\num{k}, \gn{!R})$; let
-$\rho_k$ be the corresponding !!{derivation}. We get !!a{derivation} of
-$\ORProv(\gn{!R})$:
+现在，为证 $\Th{T} \Proves/ !R$，我们假设 $\Th{T}
+\Proves !R$（有一个推导~$\delta$），并证明这将导致 $\Th{T}$ 不一致。
+令 $n$ 为~$\delta$ 的哥德尔数。由于 $\OPrf$ 在~$\Th{Q}$ 中表示证明关系，
+存在一个$\OPrf(\num{n},
+\gn{!R})$的推导~$\delta_1$。此外，因为假设 $\Th{T}$ 是一致的，
+所以没有 $k < n$ 是~$!R$ 的反驳的哥德尔数；于是对每个 $k < n$，都有 $\Th{Q} \Proves \lnot \ORefut(\num{k}, \gn{!R})$；令
+$\rho_k$ 为对应的推导。我们得到 $\ORProv(\gn{!R})$ 的一个推导：
 \begin{prooftree}\footnotesize
   \AxiomC{}
   \RightLabel{$\delta_1$}
@@ -303,20 +262,20 @@ $\ORProv(\gn{!R})$:
   \RightLabel{\Intro\lexists}
   \UnaryInfC{$\lexists[x][(\OPrf(x, \gn{!R}) \land \lforall[z][(z < x \lif \lnot \ORefut(z, \gn{!R}))])]$}
 \end{prooftree}
-(We abbreviate multiple applications of $\Elim\lor$ by $\Elim\lor^*$
-above.)  We've shown that if $\Th{T} \Proves !R$ there would be
-!!a{derivation} of~$\ORProv(\gn{!R})$.  Then, since $\Th{T} \Proves R \liff
-\lnot \ORProv(\gn{!R})$, also $\Th{T} \Proves \ORProv(\gn{!R}) \lif
-\lnot R$, we'd have $\Th{T} \Proves \lnot !R$ and $\Th{T}$ would be
-inconsistent.
+（我们把上述 $\Elim\lor$ 的多次应用简记为 $\Elim\lor^*$。）
+我们已经证明了，如果 $\Th{T} \Proves !R$，就会存在~$\ORProv(\gn{!R})$ 的一个推导。
+那么，由于 $\Th{T} \Proves R \liff
+\lnot \ORProv(\gn{!R})$，并且也有 $\Th{T} \Proves \ORProv(\gn{!R}) \lif
+\lnot R$，我们将得到 $\Th{T} \Proves \lnot !R$，从而导致 $\Th{T}$ 不一致。
 
-Now let's show that $\Th{T} \Proves/ \lnot !R$. Again, suppose it
-did. Then there is !!a{derivation} $\rho$ of $\lnot !R$ with G\"odel
-number $m$---a refutation of~$!R$---and so $\Th{Q} \Proves
-\ORefut(\num{m}, \gn{!R})$ by !!a{derivation}~$\rho_1$. Since we assume
-$\Th{T}$ is consistent, $\Th{T} \Proves/ !R$. So for all $k$, $k$ is
-not a G\"odel number of !!a{derivation} of~$!R$, and hence $\Th{Q} \Proves \lnot
-\OPrf(\num{k}, \gn{!R})$ by !!a{derivation}~$\pi_k$. So we have:
+现在来证 $\Th{T} \Proves/ \lnot !R$。再次假设 $\Th{T}$ 能证 $\lnot !R$。
+那么存在一个 $\lnot !R$ 的推导~$\rho$，其哥德尔数为 $m$（即~$!R$ 的一个反驳），
+于是由某个推导~$\rho_1$ 可得 $\Th{Q} \Proves
+\ORefut(\num{m}, \gn{!R})$。
+由于我们假设 $\Th{T}$ 是一致的，所以 $\Th{T} \Proves/ !R$。
+因此，对所有 $k$，$k$ 都不是~$!R$ 的推导的哥德尔数，
+从而对每个 $k$，由某个推导~$\pi_k$ 可得 $\Th{Q} \Proves \lnot
+\OPrf(\num{k}, \gn{!R})$。于是我们有：
   
 \begin{prooftree}\footnotesize
   \AxiomC{}
@@ -355,7 +314,7 @@ not a G\"odel number of !!a{derivation} of~$!R$, and hence $\Th{Q} \Proves \lnot
   \DeduceC{$\lnot\exists x(\OPrf(x, \gn{!R}) \land \forall z(z
     < x \lif \lnot \ORefut(z, \gn{!R})))$}
 \end{prooftree}
-where $\pi_k'$ is the !!{derivation}
+其中 $\pi_k'$ 是如下推导：
 \begin{prooftree}
   \AxiomC{}
   \RightLabel{$\pi_k$}
@@ -367,7 +326,7 @@ where $\pi_k'$ is the !!{derivation}
   \RightLabel{\Elim\lnot}
   \BinaryInfC{$\lfalse$}
 \end{prooftree}
-and $\lambda_2$ is
+而 $\lambda_2$ 是：
 \begin{prooftree}\footnotesize
   \AxiomC{}
   \RightLabel{$\lambda_3$}
@@ -405,13 +364,11 @@ and $\lambda_2$ is
   \DischargeRule{$\Elim\lor^2$}{3}
   \QuaternaryInfC{$a = \num{0} \lor \dots \lor a = \num{m} \lor \num{m} < a$}
 \end{prooftree}
-(The !!{derivation} $\lambda_3$ exists by
-\olref[inc][req][min]{lem:trichotomy}. We abbreviate repeated use of
-$\Intro\lor$ by $\Intro\lor^*$ and the double use of $\Elim\lor$ to
-derive $a = \num{0} \lor \dots \lor a = \num{m} \lor \num{m} < a$ from
-$(a < \num{m} \lor a = \num{m}) \lor \num{m} < a$ as $\Elim\lor^2$.)
+（推导 $\lambda_3$ 的存在性由
+\olref[inc][req][min]{lem:trichotomy} 保证。我们把 $\Intro\lor$ 的重复使用简记为
+$\Intro\lor^*$，并把从
+$(a < \num{m} \lor a = \num{m}) \lor \num{m} < a$ 推导
+$a = \num{0} \lor \dots \lor a = \num{m} \lor \num{m} < a$ 时两次使用 $\Elim\lor$ 简记为 $\Elim\lor^2$。）
 \end{proof}
 
 \OLEndChapterHook
-
-

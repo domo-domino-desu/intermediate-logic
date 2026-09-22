@@ -1,34 +1,13 @@
-Hilbert's program aimed to show that all of mathematics could be
-formalized in an axiomatized theory in a formal language, such as the
-language of arithmetic or of set theory.  He believed that such a
-theory would be \textbf{!!{complete}}. That is, for every !!{sentence}~$!A$,
-either $\Th{T} \Proves !A$ or $\Th{T} \Proves \lnot !A$. In this sense
-then, $\Th{T}$ would have settled every mathematical question: it
-would either prove that it's true or that it's false. If Hilbert had
-been right, it would also have turned out that mathematics is
-\textbf{!!{decidable}}. That's because any !!{axiomatizable} theory
-is \textbf{!!{computably enumerable}}, i.e., there is a computable
-function that lists all its theorems. We can test if a
-!!{sentence}~$!A$ is a theorem by listing all of them until we
-find~$!A$ (in which it is a theorem) or $\lnot !A$ (in which case it
-isn't). Alas, Hilbert was wrong. G\"odel proved that no
-!!{axiomatizable}, consistent theory that is ``strong enough'' is
-!!{complete}. That's the \textbf{first incompleteness theorem}. The
-requirement that the theory be ``strong enough'' amounts to it
-representing all computable functions and relations.  Specifically,
-the very weak theory $\Th{Q}$ satisfies this property, and any theory
-that is at least as strong as~$\Th{Q}$ also does. He also
-showed---that is the \textbf{second incompleteness theorem}---that the
-sentence that expresses the consistency of the theory is itself
-undecidable in it, i.e., the theory proves neither it nor its
-negation. So Hilbert's further aim of finding ``finitary'' consistency
-proof of all of mathematics cannot be realized. For any finitary
-consistency proof would, presumably, be formalizable in a theory that
-captures all of mathematics. Finally, we established that theories
-that represent all computable functions and relations are
-not \textbf{!!{decidable}}. Note that although axomatizability and
-completeness implies decidability, incompleteness does not imply
-undecidability.  So this result shows that the second of Hilbert's
-goals, namely that there be a procedure that decides if
-$\Th{T} \Proves !A$ or not, can also not be achieved, at least not for
-theories at least as strong as~$\Th{Q}$.
+Hilbert（希尔伯特）的纲领旨在表明，所有数学都可以在一个形式语言（如算术语言或集合论语言）的公理化理论中得到形式化。
+他相信这样一个理论将是\textbf{完备的}。即，对每个语句~$!A$，要么 $\Th{T} \Proves !A$，要么 $\Th{T} \Proves \lnot !A$。
+这样，$\Th{T}$ 就将解决每一个数学问题：它要么证明其为真，要么证明其为假。
+如果 Hilbert 是对的，那么数学也将是\textbf{可判定的}。
+这是因为任何可公理化的理论都是\textbf{可计算枚举的}，即存在一个可计算函数能列出它的所有定理。
+我们可以通过逐一列出所有定理来检验一个语句~$!A$ 是否为定理，直到找到 $!A$（此时它是定理）或找到 $\lnot !A$（此时它不是定理）。
+唉，Hilbert 错了。G\"odel（哥德尔）证明了，没有哪个可公理化、一致且“足够强”的理论是完备的。这就是\textbf{第一不完备性定理}。
+“足够强”的要求指的是该理论能够表示所有可计算函数和关系。具体来说，极弱的理论 $\Th{Q}$ 就满足这个性质，任何至少和~$\Th{Q}$ 一样强的理论也都满足。
+他还证明了——即\textbf{第二不完备性定理}——表达该理论一致性的语句本身在该理论中是不可判定的，即该理论既不能证明它，也不能证明它的否定。
+因此，Hilbert 寻找全部数学的“有穷”一致性证明的进一步目标也不可能实现。因为任何有穷的一致性证明，大概都可以在涵盖全部数学的理论中被形式化。
+最后，我们还确立了，能够表示所有可计算函数和关系的理论是\textbf{不可判定的}。
+请注意，虽然可公理化和完备性共同蕴涵可判定性，但不完备性并不蕴涵不可判定性。
+所以，这个结果表明 Hilbert 的第二个目标——即存在一个能判定 $\Th{T} \Proves !A$ 是否成立的过程——也无法实现，至少对于不弱于~$\Th{Q}$ 的理论而言是如此。

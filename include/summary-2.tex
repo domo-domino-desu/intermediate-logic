@@ -1,29 +1,22 @@
-A \emph{relation}~$R$ on a set~$A$ is a way of relating elements
-of~$A$. We write $Rxy$ if the relation \emph{holds} between $x$
-and~$y$. Formally, we can consider $R$ as the sets of pairs
-$\tuple{x,y} \in A^2$ such that~$Rxy$. Being less than, greater than,
-equal to, evenly dividing, being the same length as, a subset of, and the
-same size as are all important examples of relations (on
-sets of numbers, strings, or of sets). \emph{Graphs} are a general way
-of visually representing relations. But a graph can also be seen as a
-binary relation (the \emph{edge} relation) together with the
-underlying set of \emph{vertices}.
+集合~$A$ 上的一个\emph{关系}~$R$，是指~$A$ 中元素之间的一种关联方式。
+如果该关系在 $x$ 与~$y$ 之间\emph{成立}，我们就记作 $Rxy$。
+形式上说，我们可以把 $R$ 看作满足~$Rxy$ 的所有有序对
+$\tuple{x,y} \in A^2$ 的集合。
+小于、大于、等于、整除、长度相同、子集关系、大小相同等等，
+都是关系的重要例子（在数的集合、字符串的集合或集合的集合上）。
+\emph{图}是关系的一种通用的可视化表示方式。但图也可以看作一个二元关系（即\emph{边}关系）
+连同其底层的\emph{顶点}集合。
 
-Some relations share certain features which makes them especially
-interesting or useful. A relation~$R$ is \emph{reflexive} if
-everything is $R$-related to itself; \emph{symmetric}, if with $Rxy$
-also $Ryx$ holds for any $x$ and $y$; and \emph{transitive} if $Rxy$
-and $Ryz$ guarantees~$Rxz$. Relations that have all three of these
-properties are \emph{equivalence relations}. A relation is
-\emph{anti-symmetric} if $Rxy$ and $Ryx$
-guarantees~$x=y$. \emph{Partial orders} are those relations that are
-reflexive, anti-symmetric, and transitive. A \emph{linear order} is
-any partial order which satisfies that for any $x$ and~$y$, either
-$Rxy$ or $x=y$ or $Ryx$. (Generally, a relation with this property is
-\emph{connected}).
+有些关系具有某些共同特征，这使得它们特别有趣或有用。
+关系~$R$ 是\emph{自反的}，如果每个元素都与自身有~$R$ 关系；
+是\emph{对称的}，如果对任意 $x$ 和~$y$，只要 $Rxy$ 成立，则 $Ryx$ 也成立；
+是\emph{传递的}，如果 $Rxy$ 和 $Ryz$ 能保证~$Rxz$。
+同时具备这三个性质的关系称为\emph{等价关系}。
+关系~$R$ 是\emph{反对称的}，如果 $Rxy$ 和 $Ryx$ 能保证~$x=y$。
+\emph{偏序}就是那些自反、反对称且传递的关系。
+\emph{线性序}则是满足如下条件的偏序：对任意 $x$ 和~$y$，要么 $Rxy$，要么 $x=y$，要么 $Ryx$。
+（一般来说，具有这种性质的关系称为\emph{连通的}。）
 
-Since relations are sets (of pairs), they can be operated on as sets
-(e.g., we can form the union and intersection of relations). We can
-also chain them together (\emph{relative product}~$R \mid S$). If we
-form the relative product of~$R$ with itself arbitrarily many times we
-get the \emph{transitive closure}~$R^+$ of~$R$.
+既然关系是（有序对的）集合，它们就可以像集合一样进行运算（例如，我们可以取关系的并和交）。
+我们还可以将它们链式组合起来（即\emph{相对积}~$R \mid S$）。
+如果将~$R$ 与自身作任意多次相对积，我们就得到~$R$ 的\emph{传递闭包}~$R^+$。

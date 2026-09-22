@@ -1,24 +1,15 @@
-A \emph{set} is a collection of objects, the elements of the set. We
-write $x \in A$ if $x$~is an element of~$A$. Sets are
-\emph{extensional}---they are completely determined by their elements.
-Sets are specified by \emph{listing} the elements explicitly or by
-giving a property the elements share
-(\emph{abstraction}). Extensionality means that the order or way of
-listing or specifying the elements of a set doesn't matter. To prove
-that $A$ and~$B$ are the same set ($A = B$) one has to prove that
-every element of~$X$ is an element of~$Y$ and vice versa.
+一个\emph{集合}是一些对象的汇集，这些对象称为该集合的\emph{元素}。
+若 $x$ 是 $A$ 的一个元素，则记作 $x \in A$。
+集合是\emph{外延的}——它们完全由其元素决定。
+集合可以通过明确\emph{列举}其元素来确定，也可以通过给出其元素共同具有的某个性质来确定（\emph{抽象}）。
+外延性意味着，列举或确定集合元素时的顺序或方式无关紧要。
+要证明 $A$ 和 $B$ 是同一个集合（即 $A = B$），就必须证明 $A$ 的每个元素都是 $B$ 的元素，反之亦然。
 
-Important sets include the natural ($\Nat$), integer ($\Int$),
-rational ($\Rat$), and real ($\Real$) numbers, but also \emph{strings}
-($X^*$) and infinite \emph{sequences} ($X^\omega$) of objects. $A$~is
-a \emph{subset} of $B$, $A \subseteq B$, if every element of $A$ is
-also one of~$B$. The collection of all subsets of a set~$B$ is itself
-a set, the \emph{power set} $\Pow{B}$ of~$B$. We can form the
-\emph{union} $A \cup B$ and \emph{intersection} $A \cap B$ of sets. An
-\emph{ordered pair} $\tuple{x, y}$ consists of two objects $x$
-and~$y$, but in that specific order. The pairs $\tuple{x, y}$ and
-$\tuple{y, x}$ are different pairs (unless $x = y$). The set of all
-pairs $\tuple{x, y}$ where $x \in A$ and $y \in B$ is called the
-\emph{Cartesian product}~$A \times B$ of $A$ and $B$. We write $A^2$
-for $A \times A$; so for instance $\Nat^2$ is the set of pairs of
-natural numbers.
+一些重要的集合包括自然数（$\Nat$）、整数（$\Int$）、有理数（$\Rat$）和实数（$\Real$），也包括对象的\emph{字符串}（$X^*$）和无限\emph{序列}（$X^\omega$）。
+如果 $A$ 的每个元素同时也是 $B$ 的元素，那么 $A$ 就是 $B$ 的\emph{子集}，记作 $A \subseteq B$。
+一个集合 $B$ 的所有子集的全体本身也构成一个集合，称为 $B$ 的\emph{幂集} $\Pow{B}$。
+我们可以构造集合的\emph{并集} $A \cup B$ 与\emph{交集} $A \cap B$。
+一个\emph{有序对} $\tuple{x, y}$ 由两个对象 $x$ 和 $y$ 组成，但具有特定的顺序。
+有序对 $\tuple{x, y}$ 和 $\tuple{y, x}$ 是不同的对（除非 $x = y$）。
+所有满足 $x \in A$ 且 $y \in B$ 的有序对 $\tuple{x, y}$ 构成的集合，称为 $A$ 与 $B$ 的\emph{笛卡尔积} $A \times B$。
+我们用 $A^2$ 表示 $A \times A$；例如，$\Nat^2$ 就是全体自然数对构成的集合。

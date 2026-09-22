@@ -1,24 +1,4 @@
-A \emph{first-order language} consists of \emph{constant},
-\emph{function}, and \emph{predicate} symbols. Function and constant
-symbols take a specified number of arguments. In the \emph{language of
-arithmetic}, e.g., we have a single constant symbol~$\Obj 0$, one
-1-place function symbol $\prime$, two 2-place function symbols~$+$ and
-$\times$, and one 2-place predicate symbol~$<$. From \emph{variables}
-and constant and function symbols we form the \emph{terms} of a
-language. From the terms of a language together with its predicate
-symbols, as well as the \emph{identity symbol}~$\eq$, we form the
-\emph{atomic formulas}. And in turn from them, using the logical
-connectives $\lnot$, $\lor$, $\land$, $\lif$, $\liff$ and the
-quantifiers $\lforall$ and $\lexists$ we form its formulas. Since we
-are careful to always include necessary parentheses in the process of
-forming terms and formulas, there is always exactly one way of reading
-a formula. This makes it possible to define things by induction on the
-structure of formulas.
+一个\emph{一阶语言}由\emph{常项}符号、\emph{函数}符号和\emph{谓词}符号组成。函数符号和常项符号都有确定的元数。例如，在\emph{算术语言}中，我们有一个常项符号~$\Obj 0$，一个一元函数符号 $\prime$，两个二元函数符号~$+$ 和 $\times$，以及一个二元谓词符号~$<$。
+由\emph{变元}、常项符号和函数符号，我们构成语言的\emph{项}。由语言的项连同其谓词符号以及\emph{等词}~$\eq$，我们构成\emph{原子公式}。进而，从原子公式出发，利用逻辑联结词 $\lnot$、$\lor$、$\land$、$\lif$、$\liff$ 以及量词 $\lforall$ 和 $\lexists$，我们构成其\emph{公式}。由于我们在构成项和公式的过程中总是注意加入必要的括号，因此每个公式都有唯一的解读方式。这使得我们可以对公式结构作归纳来定义各种概念。
 
-Occurrences of variables in formulas are sometimes governed by a
-corresponding quantifier: if a variable occurs in the \emph{scope} of
-a quantifier it is considered \emph{bound}, otherwise
-\emph{free}. These concepts all have inductive definitions, and we
-also inductively define the operation of \emph{substitution} of a term
-for a variable in a formula. Formulas without free variable
-occurrences are called \emph{sentences}.
+公式中变元的出现有时受相应量词的管辖：如果一个变元出现在某个量词的\emph{辖域}内，则它被认为是\emph{约束的}，否则是\emph{自由的}。这些概念都有归纳定义，我们也归纳地定义将项\emph{代入}公式中变元的操作。不含自由变元出现的公式称为\emph{语句}。

@@ -1,270 +1,87 @@
+\section{塔斯基定理与洛布定理}
 
-\section{Tarski's Theorem and L\"ob's Theorem}
+Tarski（塔斯基）定理表明，在"\emph{在理论~$\Th{PA}$ 中可证的语句}"这一概念（侧重于将$\Th{PA}$视为我们所拥有的最佳算术理论）与"在自然数标准结构$N$中真的语句"这一概念之间存在着一条鸿沟。前一概念在 $\mathcal{L}_{A}$ 中是\emph{可定义的}，而后一概念则是\emph{不可定义的}。记住，"在$N$中真"实际上等同于"在$\Th{TA}$中可证"，所以，如果你想这么说的话，这种差异正是存在于这两种可证性概念之间。
 
-Tarski's Theorem shows that there's a gap between the notions of
-``\emph{sentence provable in the theory}~$\Th{PA}$'' (focusing on
-$\Th{PA}$ as the best theory of arithmetic we have and that of
-`sentence true in $N$, the standard structure of natural numbers'.
-The former notion is \emph{definable} in $\mathcal{L}_{A}$, and the
-latter is \emph{not definable}. Remember, `true in $N$' is really the
-same as `provable in $\Th{TA}$', so the difference, if you want to
-put it this way, is between these two notions of provable. 
-
-Tarski's paper ``Truth and proof'' \citep{Tarski1969} makes the
-following interesting remarks, which emphasize this gap, but which put
-an optimistic gloss on it:
+Tarski 的论文《Truth and proof》\citep{Tarski1969} 做了以下有趣的评论，这些评论强调了这一鸿沟，但也为其涂上了一层乐观的色彩：
 
 \begin{quotation}
-Nothing is detracted from the significance of this result [these
-results] by the fact that its philosophical implications are
-essentially negative in character. \emph{The result shows indeed that
-in no domain of mathematics is the notion of provability a perfect
-substitute for the notion of truth. The belief that formal proof can
-serve as an adequate instrument for establishing truth of all
-mathematical statements has proved to be unfounded.} The original
-triumph of formal methods has been followed by a serious setback.
+这个结果（这些结果）的哲学意涵本质上是负面的，但这并没有减损其意义。\emph{该结果确实表明，在数学的任何领域中，可证性概念都不是真概念的完美替代。认为形式证明足以确立所有数学语句之真的信念已被证明是没有根据的。} 形式方法的初始胜利之后，紧接着是一次严重的挫折。
 
-Whatever can he said to conclude this discussion is bound to be an
-anticlimax. The notion of truth for formalized the­ories can now be
-introduced by means of a precise and ad­equate definition. It can
-therefore be used without any re­strictions and reservations in
-metalogical discussion. It has actually become a basic metalogical
-notion involved in im­portant problems and results. On the other hand,
-the notion of proof has not lost its significance either. \emph{Proof
-is still the only method used to ascertain the truth of sentences
-within any specific mathematical theory. We are now aware of the fact,
-however, that there are sentences formulated in the language of the
-theory which are true but not provable, and we cannot discount the
-possibility that some such sentences occur among those in which we are
-interested and which we attempt to prove.} Hence in some situations we
-may wish to explore the possibility of widening the set of provable
-sen­tences. To this end we enrich the given theory by including new
-sentences in its axiom system or by providing it with new rules of
-proof. In doing so we use the notion of truth as a guide; for we do
-not wish to add a new axiom or a new rule of proof if we have reason
-to believe that the new axiom is not a true sentence, or that the new
-rule of proof when applied to true sentences may yield a false
-sentence. The process of extending a theory may of course be repeated
-arbitrarily many times. The notion of a true sentence functions thus
-as an ideal limit which can never be reached but which we try to
-approximate by gradually widening the set of provable sentences. (It
-seems likely, although for different reasons, that the notion of truth
-plays an analogous role in the realm of empirical knowledge.) There is
-no conflict between the notions of truth and proof in the development
-of mathematics; the two notions are not at war but live in peaceful
-coexistence. \citep[p.~77, emphasis added]{Tarski1969}.
+无论用什么来总结这场讨论，都注定是虎头蛇尾。形式化理论的真概念现在可以通过一个精确而充分的定义来引入。因此，在元逻辑讨论中，它可以不加任何限制和保留地使用。实际上，它已成为涉及重要问题和结果的一个基本元逻辑概念。另一方面，证明概念也没有失去其意义。\emph{证明仍是用来在任一特定数学理论中确认语句之真的唯一方法。然而，我们现在意识到，存在一些用该理论语言表述的语句，它们是真的但不可证；我们也不能排除这种可能性：我们所感兴趣的、并试图去证明的某些语句就是这类语句。} 因此，在某些情况下，我们可能希望探索扩大可证语句集合的可能性。为此，我们通过在其公理系统中纳入新语句或为其提供新的证明规则来丰富给定理论。这样做时，我们以真概念为指导；因为我们不愿意增加一个新公理或新证明规则，如果我们有理由相信新公理不是一个真语句，或者新证明规则在应用于真语句时可能产生假语句。当然，扩展理论的过程可以任意重复多次。真语句的概念由此充当着一个理想的极限，它永远无法达到，但我们试图通过逐步扩大可证语句的集合来逼近它。（尽管原因不同，但真概念在经验知识领域似乎也起着类似的作用。）在数学的发展中，真概念与证明概念之间并无冲突；这两个概念并不相互对立，而是和平共处。\citep[p.~77, 强调为原文所加]{Tarski1969}
 \end{quotation}
-What Tarski brings out here is the gap between truth and proof, and
-the fact that there must be, in effect, a dialectical relationship
-between the two, perhaps more than what he calls here `peaceful
-coexistence'. This gap was dramatically emphasised by G\"odel, in  a
-lecture in 1951, in a comment he made about the Second Incompleteness
-Theorem, a comment which supports Tarski's point that we should use
-``truth as a guide'':
+
+Tarski 在此揭示的是真与证明之间的鸿沟，以及两者之间实际上必然存在的一种辩证关系——或许比他这里所称的"和平共处"更为深刻。G\"odel 在1951年的一次讲座中，就第二不完全性定理所作的评论，戏剧性地强调了这一鸿沟，这一评论支持了 Tarski 关于我们应当"以真为指导"的观点：
+
 \begin{quote}
-It is \emph{this} [the second] theorem which makes the
-incompletability of mathematics particularly evident. For, \emph{it
-makes it impossible that someone should set up a certain well-defined
-system of axioms and rules and consistently make the following
-assertion about it: All of these axioms and rules I perceive (with
-mathematical certitude) to be correct, and moreover I believe that
-they contain all of mathematics}. If someone makes such a statement he
-contradicts himself.\footnote{[G\"odel's footnote:] If he only says
-``I believe I shall be able to perceive one after the other to be
-true'' (where their number is supposed to be infinite), he does not
-contradict himself.} For if he perceives the axioms under
-consideration to be correct, he also perceives (with the same
-certainty) that they are consistent. Hence he has a mathematical
-insight not derivable from his axioms. However, one has to be careful
-in order to understand clearly the meaning of this state of affairs.
-Does it mean that no well-defined system of correct axioms can contain
-all of mathematics proper? It does, if by mathematics proper is
-understood the system of all true mathematical propositions; it does
-not, however, if one understands by it the system of all demonstrable
-mathematical propositions. \citep[p.~309]{Godel1951}
+正是\emph{这}个[第二个]定理使得数学的不可完全性（incompletability）尤为明显。因为，\emph{它使得任何人都不可能建立起某个定义良好的公理与规则系统，并就它做出如下一致的断言：我（以数学的确定性）认识到所有这些公理和规则都是正确的，并且我相信它们包含了全部的数学}。如果有人做出这样的陈述，他就自相矛盾。\footnote{[哥德尔的脚注:] 如果他只说"我相信我将能逐一认识到它们为真"（假定其数量是无穷的），则他不自相矛盾。} 因为，如果他认识到所考虑的那些公理是正确的，那么他也就（以同样的确定性）认识到它们是一致的。因此，他就拥有一个不能从他的公理推导出来的数学洞察。不过，我们必须小心谨慎，以便清楚地理解这一事态的意义。这是否意味着，任何定义良好的正确公理系统都不能包含恰当数学的全部？如果"恰当数学"指的是所有真数学命题的系统，那么答案是肯定的；但如果指的是所有可证的数学命题的系统，则答案是否定的。 \citep[p.~309]{Godel1951}
 \end{quote}
 
-The juxtaposition of Tarski's Theorem and the G\"odel results show us
-that the gap between truth and provability is large; what L\"ob's
-Theorem does is emphasise how large that gap really is, and in
-particular how unlike the notion of truth the notion of proof is.
-Above all it shows that  proof can't really act as a surrogate for
-truth, that provability can't be just a form of ``supertruth'', like
-logical truth or necessary truth.  
+Tarski 定理与 G\"odel 结果的并列告诉我们，真与可证性之间的鸿沟是巨大的；而 L\"ob 定理的作用则是强调这个鸿沟究竟有多大，尤其是"证明"这一概念与"真"这一概念有多么不同。最重要的是，这表明证明并不能真正充当真的替代品，可证性不能只是一种"超真"，比如像逻辑真或必然真那样。
 
-Let us show how L\"ob's Theorem brings out the difference. 
+让我们来展示 L\"ob 定理是如何揭示这一差异的。
 
-First,  if we proceeded with truth in much the same way as we proceed
-in the prove of L\"ob's Theorem we would get something quite absurd, a
-proof of the existence of Santa Claus. Note the fact that we have
-``Santa Claus exists'' here plays no role whatsoever. It could be
-``The Dark Lord exists'', or any one of your favourite nonsense
-claims, e.g., ``The Moon is made of green cheese''. We presented a
-version of this argument in the textbook. Here is the same argument
-given by George Boolos in his book \emph{The Logic of Provability}:
-\begin{quote} 
-Let Sam be the sentence ``if Sam is true, SC'' [where ``SC''
-abbreviates the sentence ``Santa Claus exists'']. Assume that Sam is
-true; then ``if Sam is true, SC'' is true; thus if Sam is true, SC;
-and so SC by modus ponens. Thus we have shown that SC on the
-assumption that Sam is true and have therefore shown outright that if
-Sam is true, SC. But then ``If Sam is true, SC'' is true, i.e., Sam is
-true, and by modus ponens again, SC. \citep[p.~56]{Boolos1993}
+首先，如果我们用类似于处理 L\"ob 定理证明的方式来处理真，就会得出极其荒谬的东西，比如对圣诞老人存在的证明。注意，这里使用"圣诞老人存在"这一语句，这一点本身不起任何作用。它可以是"黑暗君主存在"，或者你最喜欢的任何无稽之谈，例如"月亮是绿奶酪做的"。我们在教科书中已经给出了这个论证的一个版本。以下是 George Boolos 在他的书 \emph{The Logic of Provability} 中给出的同一论证：
+
+\begin{quote}
+设 Sam 为语句"如果 Sam 是真的，则 SC"[其中"SC"是语句"圣诞老人存在"的缩写]。假设 Sam 为真；那么"如果 Sam 为真，则 SC"为真；因此，如果 Sam 为真，则 SC；于是通过肯定前件可得 SC。这样，我们就证明了在假设 Sam 为真的前提下推出了 SC，因而也就无条件地证明了：如果 Sam 为真，则 SC。但这样一来，"如果 Sam 为真，则 SC"是真的，即 Sam 为真，于是再次使用肯定前件，得到 SC。 \citep[p.~56]{Boolos1993}
 \end{quote}
-To reiterate,  \emph{any} statement can be proved this way. What this
-means is that we can easily get a contradiction, which means that we
-must be operating with inconsistent assumptions! But which
-inconsistent assumptions? In fact, the argument above is just an
-elaborate version of the Liar Paradox, and we are in fact operating
-with the same inconsistent assumption as is behind that.
 
-We can show this as follows. If you look carefully at the argument
-Boolos presents, you will notice that several times we make use of the
-principle:
+
+重申一遍，\emph{任何}语句都可以用这种方式"证明"。这意味着我们可以轻易得到一个矛盾，这说明我们一定是在某些不一致的假设下进行操作！但究竟是哪些不一致的假设呢？事实上，上面的论证只不过是"说谎者悖论"的一个精致版本，而我们实际上使用的正是导致那个悖论的相同的不一致假设。
+
+我们可以如下说明这一点。如果你仔细审视 Boolos 给出的论证，会注意到我们多次利用了原则：
 \begin{equation*}\label{eqn:convention-t}
-\text{``$X$'' is true iff $X$}\tag{T}
+\text{``$X$'' 为真当且仅当 $X$}\tag{T}
 \end{equation*}
-which we saw earlier illustrated through the particular instance
-``\,`Snow is white' is true iff snow is white''. We use the principle
-here in the shift (left-to-right) from ``{}`If Sam is true, SC' is
-true'' to ``If Sam is true, SC''. Then later we have the shift
-(right-to-left here) from ``If Sam is true, SC'' to ``{}`If Sam is
-true, SC' is true''. The principle (T) (often referred to as
-``convention~(T)'') is the  basic principle that a correct
-truth-definition has to satisfy. Moreover, it is the principle which
-in English (taken as the meta-language for discussion of English)
-allows us to deduce a contradiction from ``This sentence is false'',
-i.e., the statement which gives us the Liar Paradox. 
+我们之前已经通过"`雪是白的'为真当且仅当雪是白的"这一特例见识过这个原则。我们在此将它用于从"`如果 Sam 为真，则 SC' 为真"到"如果 Sam 为真，则 SC"的转换（从左到右）。稍后，又有从"如果 Sam 为真，则 SC"到"`如果 Sam 为真，则 SC' 为真"的转换（这里从右到左）。原则 (T)（常被称为"约定 (T)"）是一个正确的真定义所必须满足的基本原则。而且，在英语中（将英语作为讨论英语的元语言），正是这个原则允许我们从"本句为假"——即产生说谎者悖论的陈述——推导出矛盾。
 
-Let's now go back to Tarski's Theorem in the form that we proved it,
-i.e., showing that no $1$-place predicate of the language can define
-the set of G\"odel-numbers of sentences true in the standard model.
-Assume that there were such a predicate~$!D(x)$. We would have that
-$n$ is the G\"odel number of sentence $!A$ (so $n= \Gn{!A}$) true in
-the standard model if, and only if, $\Sat{N}{!D(\gn{!A})}$. From this
-follows $\Sat{N}{!A}$ iff $\Sat{N}{!D(\gn{!A})}$. But this means that
-$\Sat{N}{!A \liff !D(\gn{!A})}$. And  remember that saying
-``$\Sat{N}{!X}$'' is the same as saying ``$\Th{TA} \Proves !X$'. Put
-all this together and we have:
+现在回到我们已证明的塔尔斯基定理的形式，即表明该语言没有任何一元谓词能够定义标准模型中真语句的哥德尔数集。假设存在这样的谓词~$!D(x)$。则有：$n$ 是标准模型中为真的语句 $!A$ 的哥德尔数（即 $n= \Gn{!A}$），当且仅当 $\Sat{N}{!D(\gn{!A})}$。由此可得 $\Sat{N}{!A}$ 当且仅当 $\Sat{N}{!D(\gn{!A})}$。但这意味着 $\Sat{N}{!A \liff !D(\gn{!A})}$。请记住，说``$\Sat{N}{!X}$''等同于说``$\Th{TA} \Proves !X$''。综合以上各点，便得到：
 \begin{equation*}\label{eqn:t-for-ta}
  \Th{TA} \Proves !A \liff !D(\gn{!A}),\tag{T$_{\Th{TA}}$}
 \end{equation*}
-which, if we read $!D(x)$ as ``is true'', really says that $\Th{TA}$
-can produce the principle \cref{eqn:convention-t} above. We often say
-that principles like  \cref{eqn:t-for-ta} are ``truth-definitions'',
-holding as they do for all sentences of the language concerned. But
-this immediately gives rise here to a contradiction, for we can apply
-the Diagonal Lemma to $\lnot !D(x)$ and get a sentence~$!L$ such that
+若将 $!D(x)$ 读作``是真的''，这实际上就是说 $\Th{TA}$ 能导出上述原则 \cref{eqn:convention-t}。我们常说，像 \cref{eqn:t-for-ta} 这样的原则是``真定义''，因为它们对相应语言的所有语句都成立。但这立即导致矛盾：我们可以对 $\lnot !D(x)$ 应用对角引理，得到一个语句~$!L$，使得
 \begin{align*}
     \Th{TA} &\Proves !L \liff \lnot !D(\gn{!L}).
-\intertext{But \cref{eqn:t-for-ta} above instantiated for~$!L$
-will give us:}
+\intertext{而将上述 \cref{eqn:t-for-ta} 对~$!L$ 实例化，便得到：}
 \Th{TA} & \Proves !L \liff !D(\gn{!L}),
 \end{align*}
-thus contradiction. 
+从而导出矛盾。
 
-Let's come back to the difference between truth and provability.
-First, as we've seen, what the principle \cref{eqn:convention-t}
-allows is switching  as we please between ``{}'$X$' is true''
-and~``$X$''. But the reasoning presented in the proof of L\"ob's
-Theorem ``mimics'' the Santa Claus argument when ``is true'' replaced
-by ``is provable'', and where the requisite switching between
-``{}'$X$' is provable'' and ``$X$'' is now provided by the
-derivability conditions. We do not, of course, get a contradiction. 
+现在回到真与可证性之间的区别。首先，正如我们所见，原则 \cref{eqn:convention-t} 所允许的，是在``{}'$X$'是真的''与``$X$''之间随意切换。但洛布定理证明中的推理``模仿''了圣诞老人论证，只是将``是真的''替换为``是可证的''，而``{}'$X$'是可证的''与``$X$''之间所需的切换现在由可推导性条件来提供。当然，这里不会导出矛盾。
 
-Second, we can use L\"ob's Theorem to give us Tarski's Theorem in the
-form that we cannot have a truth-definition, i.e., that ``true in
-$\Struct N$'' cannot be definable.  The argument goes roughly like
-this:
+其次，我们可以利用洛布定理得出塔尔斯基定理的另一种形式，即不可能有真定义，也就是说``在 $\Struct N$ 中为真''是不可定义的。论证大致如下：
 
-Suppose $\mathrm{Tr}(x)$ is a truth-predicate for an appropriate
-theory $\Th{T}$, and the truth-definition  
+假设 $\mathrm{Tr}(x)$ 是某个适当理论 $\Th{T}$ 的真谓词，且真定义
 \begin{equation}\label{eqn:loeb-td}
 \Th{T}\Proves A \liff \mathrm{Tr}(\gn{A})\tag{\textit{Tr}}
 \end{equation}
-holds. Then it's clear using this that all of the derivability
-conditions hold for $\mathrm{Tr}(x)$, which means that we must have a
-L\"ob Theorem for $\mathrm{Tr}(x)$. (Remember, in the statement of
-L\"ob's Theorem, all we really need to know about the provability
-predicate is that the derivability conditions hold for it. We know
-nothing else about the ``inner workings'' of the predicate. Thus, if
-there were a truth-predicate, it would satisfy the conditions of
-L\"ob's Theorem.) Now take \textit{any} sentence~$!A$. Then by
-\eqref{eqn:loeb-td} we have $\Th{T} \Proves \mathrm{Tr}(\gn{!A}) \liff
-!A$, so in particular $\Th{T} \Proves \mathrm{Tr}(\gn{!A}) \lif !A$.
-By L\"ob's Theorem applied to $\mathrm{Tr}(x)$, this means that we
-have $\Th{T} \Proves !A$. So \emph{any} sentence would be provable in
-$\Th{T}$ if $\Th{T}$ were equipped with a truth-definition, which of
-course would make $\Th{T}$ inconsistent. So a sufficient condition for
-a sentence~$!A$ to be provable is that $\Th{T} \Proves
-\mathrm{Tr}(\gn{A}) \lif A$, but \eqref{eqn:loeb-td} says that this
-must be the case for any sentence.
+成立。那么显然，由此可知所有可推导性条件对 $\mathrm{Tr}(x)$ 都成立，这意味着关于 $\mathrm{Tr}(x)$ 的洛布定理必然成立。（请记住，在洛布定理的陈述中，关于可证性谓词，我们真正需要知道的只是可推导性条件对它成立。关于该谓词的``内部运作''，我们一无所知。因此，如果存在一个真谓词，它将满足洛布定理的条件。）现在取\textit{任意}语句~$!A$。由 \eqref{eqn:loeb-td}，我们有 $\Th{T} \Proves \mathrm{Tr}(\gn{!A}) \liff
+!A$，特别地有 $\Th{T} \Proves \mathrm{Tr}(\gn{!A}) \lif !A$。对 $\mathrm{Tr}(x)$ 应用洛布定理，便得 $\Th{T} \Proves !A$。因此，如果 $\Th{T}$ 具有一个真定义，那么\emph{任何}语句都在 $\Th{T}$ 中可证，这当然会导致 $\Th{T}$ 不一致。于是，语句~$!A$ 可证的一个充分条件是 $\Th{T} \Proves
+\mathrm{Tr}(\gn{A}) \lif A$，而 \eqref{eqn:loeb-td} 说这对任何语句都必然成立。
 %\footnote{Part of what we're saying here is that, as far as L\"ob's
 %Theorem goes, the only thing that's really important about
 %`$\OProv(x)$' is that it satisfies the three Hilbert-Bernays
 %derivability conditions , which amounts to saying that we can prove a
 %L\"ob Theorem for any 1-place predicate which satisfies analogous
 %conditions.} 
-Hence, using L\"ob's Theorem, we've shown that if $\Th{T}$ is
-consistent, there can't be a truth-definition for~$\Th{T}$. 
+因此，利用洛布定理，我们证明了：如果 $\Th{T}$ 是一致的，就不可能有 $\Th{T}$ 的真定义。
 
-In short, if we could get L\"ob for truth, we would get contradiction,
-but L\"ob for provability \emph{does not} give us contradiction. But
-if go further into the comparison, we can see  how wide the gap is. 
+简言之，如果我们能得到关于真的洛布定理，就会导出矛盾；但关于可证性的洛布定理\emph{不会}导出矛盾。不过，若进一步加以比较，就能看出这一差距之大。
 
-Boolos has some  comments on the remarkable nature of the L\"ob
-Theorem which touch on what we've just observed, and which emphasize
-just how big the gap really is. In reading these comments, first think
-of ``$\OProv(x)$'' as a natural replacement for ``truth$(x)$''; that will
-highlight the surprise. Boolos comments as follows:
+Boolos（布洛斯）对洛布定理令人惊异的性质有一些评论，这些评论触及了我们刚刚观察到的内容，并强调了这一差距究竟有多大。在阅读这些评论时，不妨先将``$\OProv(x)$''视为``$\mathrm{truth}(x)$''的自然替代品；这将更显其中的惊人之处。Boolos 评论如下：
+
+
 \begin{quotation}
-L\"ob's theorem is utterly astonishing for at least five reasons. In
-the first place, it is often hard to understand how vast the
-mathematical gap is between truth and provability. And to one who
-lacks that understanding and does not distinguish between truth and
-provability, $\OProv(\gn{S})\lif S$, which the hypothesis of
-L\"ob's theorem asserts to be provable, might appear to be trivially
-true in all cases, whether $S$ is true or false, provable or
-unprovable. But if $S$ is false,  $S$ had better not be provable. Thus
-it would seem that $S$ ought not always to be provable provided merely
-that (the possibly trivial-seeming) $\OProv(\gn{S})\lif S$ is
-provable.
+L\"ob 定理之所以极其令人惊异，至少有以下五个原因。首先，人们常常难以理解真与可证性之间的数学鸿沟究竟有多深。对于一个缺乏这种理解、未能区分真与可证性的人来说，L\"ob 定理的假设所断言为可证的 $\OProv(\gn{S})\lif S$，可能看起来在所有情况下都平凡地为真——无论 $S$ 是真是假、可证与否。但如果 $S$ 是假的，$S$ 就不应该是可证的。因此，仅仅因为（看似可能平凡的）$\OProv(\gn{S})\lif S$ 可证，似乎并不总能推出 $S$ 是可证的。
 
-Secondly, $\OProv$ seems here to be working like negation. After
-all, if $\lnot S \lif S$ is provable, then so is $S$; proving $S$ by
-proving $\lnot S\lif S$ is called \emph{reductio ad absurdum} (or,
-sometimes, the law of Clavius). Moreover, inferring $S$ solely on the
-ground that ($S\lif S$) is demonstrable is known as begging the
-question, or reasoning in a circle. To one who conflates truth and
-provability, it may then seem that L\"ob's theorem asserts that
-begging the question is an admissible form of reasoning in PA.
+其次，这里的 $\OProv$ 似乎在起着类似于否定的作用。毕竟，如果 $\lnot S \lif S$ 是可证的，那么 $S$ 也是可证的；通过证明 $\lnot S\lif S$ 来证明 $S$，这被称为\emph{归谬法}（有时也称为 Clavius 律）。此外，仅凭 $(S\lif S)$ 可证这一理由就推断出 $S$，这被称为乞题，或循环论证。对于将真与可证性混为一谈的人来说，L\"ob 定理似乎在断言：乞题在 PA 中是一种允许的推理形式。
 
-Thirdly, one might have thought that \emph{at least on occasion}, PA
-would claim to be sound with regard to an unprovable sentence $S$,
-i.e., claim that \emph{if} it proves $S$, then $S$ holds. But L\"ob's
-theorem tells us that it never does so: PA makes the claim
-$\OProv(\gn{S})\lif S$ that it is sound with regard to $S$ only
-when it obviously must, when the consequent $S$ is actually provable.
-As Rohit Parikh once put it, ``PA couldn't be more modest about its
-own veracity''.
+第三，人们或许会认为，\emph{至少有时}，PA 会声称自己对于一个不可证的语句 $S$ 是可靠的，即声称\emph{如果}它证明了 $S$，则 $S$ 成立。但 L\"ob 定理告诉我们，它从不这样做：PA 只有在显然必须如此时——即当后件 $S$ 实际上可证时——才会做出 $\OProv(\gn{S})\lif S$ 这一声称，说自己对 $S$ 是可靠的。正如 Rohit Parikh 曾所说：``PA 对自身的真理性可谓谦虚至极。''
 
-Fourthly, one might very naturally suppose that provability is a kind
-of necessity, and therefore, just as $\Box(\Box p \lif p)$ always
-expresses a truth if the box is interpreted as ``it is necessary
-that'' ---~for then $\Box(\Box p \lif p)$ says that it is necessarily
-true that if a statement is necessarily true, it is true
----~$\OProv(\gn{\OProv(\gn{S})\lif S})$ would also always
-be true or at least true in some cases in which $S$ is false and not
-true only in the rather exceptional cases in which $S$ is actually
-provable.
+第四，人们很自然地会假定可证性是一种必然性，因此，正如当方框解释为``必然地''时 $\Box(\Box p \lif p)$ 总是表达一个真命题——因为它说的是：如果一个语句必然为真则它为真，这是必然为真的——一样，$\OProv(\gn{\OProv(\gn{S})\lif S})$ 也应当总是为真，或至少在某些 $S$ 为假的场合下为真，而不仅仅在 $S$ 实际可证这种相当特殊的情况下才为真。
 
-Finally, it seems wholly bizarre that the statement that if $S$ is
-provable, then $S$ is true is not itself provable, in general. For
-isn't it perfectly obvious, for any $S$, that $S$ is true if provable?
-Why are we bothering with PA if its theorems are false? And how could
-any such (apparently) obvious truth not be provable?
-\citep[pp.~54--55]{Boolos1993}\footnote{We've replaced Boolos' use
-of G\"odel's \textit{Bew} with our `$\OProv$'.}
+最后，一般来说，``若 $S$ 可证，则 $S$ 为真''这一陈述本身竟然不可证，这看起来十分荒谬。因为对于任何 $S$，如果 $S$ 可证则 $S$ 为真，这难道不是完全显而易见的吗？如果 PA 的定理为假，我们何苦费心研究 PA 呢？再者，任何如此（表面上）显而易见的真理，怎么可能不是可证的呢？
+\citep[pp.~54--55]{Boolos1993}\footnote{我们将 Boolos 使用的 G\"odel 的 \textit{Bew} 替换成了我们的 `$\OProv$'。}
 \end{quotation}
 
 %Here, we can fill out some of these points with the following highly
@@ -304,62 +121,15 @@ of G\"odel's \textit{Bew} with our `$\OProv$'.}
 %Hence,  using L\"ob's Theorem, we've shown that  if $S$ is
 %consistent, there can't be a truth-definition for  $S$. 
 
+让我们对其中一些要点稍加展开。
 
-Let's elaborate a little on some of these points.
+第一点。以``$2+2=5$''这样的例子来说。我们当然不能允许 $\Th{PA}$ 证明 $2+2=5$，这意味着（根据洛布定理）不可能出现 $\Th{PA} \Proves
+\OProv(\gn{2+2=5}) \to 2+2=5$ 的情况！{} 换句话说，$\Th{PA}$ 不能告诉我们凡是它所证明的都为真，也不能告诉我们它所认可的证明概念是良好的！{} 而我们设计形式可证性谓词``$\OProv(x)$''（针对 $\Th{PA}$），不正是为了让它匹配``在 $\Th{PA}$ 中可证''吗？
 
-The first point. Take an example like ``$2+2=5$''. We certainly can't
-have it that $\Th{PA}$ can prove $2+2=5$, which means (following
-L\"ob's Theorem) that it can't be the case that $\Th{PA} \Proves
-\OProv(\gn{2+2=5}) \to 2+2=5$!{} In other words, $\Th{PA}$ can't
-tell us that whatever it proves is true, or that the notion of proof
-it recognizes is a good one!{} And haven't we designed it so that the
-formal provability predicate ``$\OProv(x)$'' (for $\Th{PA}$)
-matches ``is provable in~$\Th{PA}$''?
+第三点对此做了延伸。以哥德巴赫猜想（\textit{GC\/}）或孪生素数猜想（\textit{TPC\/}）这样的命题为例——它们是否在 $\Th{PA}$ 中可证，我们尚不清楚。我们或许会希望 $\Th{PA}$ 能够证明这些命题至少在某些时候满足 $\OProv(\gn{\textit{GC\/}}) \to \textit{GC}$ 或
+$\OProv(\gn{\textit{TPC\/}}) \to \textit{TPC}$，也就是说，它知道 PA 对 $\textit{TPC}$ 的一个证明将表明 $\textit{TPC}$ 是正确的。但洛布定理告诉我们它做不到这一点，或者更确切地说，只有在\emph{已经}存在 PA 对 \textit{GC} 或~\textit{TPC} 的证明时，它才能做到！{}
 
-The third point extends this. Suppose we take something like the
-Goldbach Conjecture (\textit{GC\/}) or the Twin Prime Conjecture
-(\textit{TPC\/}), propositions that we don't know to be provable
-in~$\Th{PA}$. We would hope that $\Th{PA}$ would be able to prove of
-such propositions, at least some of the time, that
-$\OProv(\gn{\textit{GC\/}}) \to \textit{GC}$ or
-$\OProv(\gn{\textit{TPC\/}}) \to \textit{TPC}$, i.e., that it knows a
-$\Th{PA}$ proof of $\textit{TPC}$ would show that $\textit{TPC}$ is
-correct. But L\"ob's Theorem tells us it can't do that, or rather that
-it can only do that if there is \emph{already} a $\Th{PA}$ proof of
-\textit{GC} or~\textit{TPC}!{}
+想想这与真有多么不同。对于一个真定义（如果我们有的话），无论 $A$ 为真、为假、矛盾还是荒谬，$\mathrm{Tr}(\gn{A})
+\liff A$ 都必须成立；因此，无论 $A$ 断言了什么，$\mathrm{Tr}(\gn{A}) \lif A$ 也都成立。换句话说（换用英语表述），``{}'月亮是绿奶酪做的'为真 $\Leftrightarrow$（甚或仅仅 $\Rightarrow$）月亮是绿奶酪做的''是成立的，即使这里涉及的语句并不为真，甚至有些荒谬可笑——我们之所以愿意考虑它，仅仅是因为它的句法形式。但洛布定理告诉我们，``$\Th{T} \Proves S$''不能在这个意义上充当真的替代品，因为否则我们似乎就能证明月亮是绿奶酪做的（或任何其他种类的奶酪，或棉花糖，或泥炭藓……），或证明其算术等价物。这向我们表明（塔尔斯基定理），我们不可能为 $\Th{PA}$ 建立一个真定义使得 (T$_{\Th{PA}}$) 在 $\Th{PA}$ 中可证。但如果``可证''是``为真''的替代品，那么我们当然会期望 $\Th{PA}$ 能一般地证明``$\OProv(\gn{A}) \lif A$''。这一点在第~5 点中得到了强调。
 
-Think about how different this is from truth. For a truth-definition
-(if we have one), it has got to be the case that $\mathrm{Tr}(\gn{A})
-\liff A$ holds regardless of whether $A$ is true, false, contradictory
-or ridiculous: and therefore $\mathrm{Tr}(\gn{A}) \lif A$ holds  also,
-regardless of what $A$ asserts. In other words (switching to English)
-``{}`The moon is made of green cheese' is true $\Leftrightarrow$ [or
-even just $\Rightarrow$]  the moon is made of green cheese'', even
-though the sentence involved here is not true, and is even faintly
-ludicrous, one we're only prepared to contemplate by reason of it's
-syntactic formulation.  But L\"ob's Theorem tells us that ``$\Th{T}
-\Proves S$'' cannot be a surrogate for truth in this sense, for we
-could then, it seems,  prove that the moon is made of green cheese (or
-any other kind of cheese, or marshmallow or sphagnum moss \dots), or
-some arithmetic equivalents. That shows us (Tarski's Theorem) that we
-can't have a truth-definition for $\Th{PA}$ where (T$_{\Th{PA}}$) is
-provable in $\Th{PA}$. But if ``provable'' is a surrogate for ``is
-true'', then we we would certainly expect $\Th{PA}$ to be able to
-prove ``$\OProv(\gn{A}) \lif A$'' in general. This is stressed in
-Point 5.
-
-Lastly, consider the second point. As Boolos points out, suppose we
-think that ``$\OProv(\gn{S})$'' is really some sort of strong
-affirmation of $S$ (``being true and more''). In this case, then
-``$\OProv(\gn{S}) \lif S$'' would be  something like ``$S \lif S$''
-(or at least this should follow from ``$\OProv(\gn{S}) \lif S$'').
-But then using this as a \emph{justification} for ``$\Th{T}\Proves S$''
-is really like arguing by begging the question!{} However,  if
-``$\OProv(\gn{S}) \lif S$'' really acts as a genuine justification
-for $S$,  then it looks as if ``$\OProv(\gn{S})$'' is behaving,
-not like an affirmation at all, but really rather like like a
-\emph{negation}, as in the proof of~``$S$'' given by proving ``$\lnot S
-\lif S$''!{} So it seems as if it can't be the case that
-``$\OProv(\gn{S})$'' is like a strong \emph{affirmation} of $S$
-(``being true and more'') at all, and is actually more like a
-\emph{denial} of~$S$.
+最后，考虑第二点。正如 Boolos 所指出的，假设我们认为``$\OProv(\gn{S})$''确实是对 $S$ 的某种强肯定（``为真且更多''）。在这种情况下，``$\OProv(\gn{S}) \lif S$''就会类似于``$S \lif S$''（或至少``$S \lif S$''应能从``$\OProv(\gn{S}) \lif S$''推出）。但这样一来，将其用作``$\Th{T}\Proves S$''的\emph{证成}，就真的如同在乞题了！{} 然而，如果``$\OProv(\gn{S}) \lif S$''确实能作为 $S$ 的真正证成，那么``$\OProv(\gn{S})$''的行为看起来就根本不像一种肯定，而实际上更像一种\emph{否定}——如同通过证明``$\lnot S \lif S$''来证明``$S$''那样！{} 因此，``$\OProv(\gn{S})$''似乎根本不可能像是对 $S$ 的强\emph{肯定}（``为真且更多''），而实际上更接近于对 $S$ 的\emph{否认}。

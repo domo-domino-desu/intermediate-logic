@@ -1,281 +1,87 @@
 % !TeX root = ../il-screen.tex
 
-\chapter{About this Book}
+\chapter{关于本书}
 
-This book is an introduction to metalogic, aimed especially at
-students of computer science and philosophy. ``Metalogic'' is
-so-called because it is the discipline that studies logic itself.
-Logic proper is concerned with canons of valid inference, and its
-symbolic or formal version presents these canons using formal
-languages, such as those of propositional and predicate, a.k.a.,
-first-order logic. Meta-logic investigates the properties of these
-language, and of the canons of correct inference that use them. It
-studies topics such as how to give precise meaning to the expressions
-of these formal languages, how to justify the canons of valid
-inference, what the properties of various !!{derivation} systems are, including
-their computational properties. These questions are important and
-interesting in their own right, because the languages and proof
-systems investigated are applied in many different areas---in
-mathematics, philosophy, computer science, and linguistics,
-especially---but they also serve as examples of how to study formal
-systems in general. The logical languages we study here are not the
-only ones people are interested in. For instance, linguists and
-philosophers are interested in languages that are much more
-complicated than those of propositional and first-order logic, and
-computer scientists are interested in other \emph{kinds} of languages
-altogether, such as programming languages. And the methods we discuss
-here---how to give semantics for formal languages, how to prove
-results about formal languages, how to investigate the properties of
-formal languages---are applicable in those cases as well.
+本书是元逻辑导论，主要面向计算机科学和哲学专业的学生。"元逻辑"之所以得名，是因为它是一门研究逻辑本身的学科。
+逻辑本身关注的是有效推理的法则，而其符号或形式版本则使用形式语言——例如命题逻辑和谓词逻辑（即一阶逻辑）的语言——来表达这些法则。
+元逻辑研究的是这些语言的性质，以及使用这些语言的正确推理法则的性质。
+它研究诸如如何为这些形式语言的表达式赋予精确含义、如何证成有效推理的法则、各种推导系统具有哪些性质（包括它们的计算性质）等课题。
+这些问题本身就十分重要且有趣，因为所研究的语言和证明系统应用于许多不同领域——尤其是在数学、哲学、计算机科学和语言学中——同时它们也可作为如何研究一般形式系统的范例。
+我们在此研究的逻辑语言并非人们唯一感兴趣的语言。例如，语言学家和哲学家对远比命题逻辑和一阶逻辑复杂的语言感兴趣，而计算机科学家则对完全\emph{不同种类的}语言感兴趣，例如编程语言。我们在此讨论的方法——如何为形式语言提供语义、如何证明关于形式语言的结果、如何研究形式语言的性质——同样适用于这些情况。
 
-Like any discipline, metalogic both has a set of results or facts,
-and a store of methods and techniques, and this text covers both.
-Some students won't need to know some of the results we discuss
-outside of this course, but they will need and use the methods we use
-to establish them. The L\"owenheim-Skolem theorem, say, does not
-often make an appearance in computer science, but the methods we use
-to prove it do. On the other hand, many of the results we discuss do
-have relevance for certain debates, say, in the philosophy of science
-and in metaphysics. Philosophy students may not need to be able to
-prove these results outside this course, but they do need to
-understand what the results are---and you really only
-\emph{understand} these results if you have thought through the
-definitions and proofs needed to establish them. These are, in part,
-the reasons for why the results and the methods covered in this text
-are recommended study---in some cases even required---for students of
-computer science and philosophy.
+与任何学科一样，元逻辑既包含一系列结果或事实，也包含一套方法和技术，本书对两者都有涵盖。
+有些学生在课程之外可能不需要了解我们所讨论的某些结果，但他们将需要并运用我们确立这些结果所使用的方法。
+比如说，L\"owenheim-Skolem（勒文海姆-斯科伦）定理在计算机科学中并不常出现，但我们用来证明它的方法却会出现。
+另一方面，我们所讨论的许多结果确实与某些争论相关，例如在科学哲学和形而上学中的争论。
+哲学学生在本课程之外可能不需要能够证明这些结果，但他们确实需要理解这些结果是什么——而只有当你仔细思考了确立这些结果所需的定义和证明，你才真正\emph{理解}了它们。
+在某种程度上，本书所涵盖的结果和方法之所以被推荐——在某些情况下甚至是必修——给计算机科学和哲学专业的学生学习，原因正在于此。
 
-The material is divided into three parts. \Olref[sfr][][]{part} concerns
-itself with the theory of sets. Logic and metalogic is historically
-connected very closely to what's called the ``foundations of
-mathematics.''  Mathematical foundations deal with how ultimately
-mathematical objects such as integers, rational, and real numbers,
-functions, spaces, etc., should be understood. Set theory provides
-one answer (there are others), and so set theory and logic have long
-been studied side-by-side. Sets, relations, and functions are also
-ubiquitous in any sort of formal investigation, not just in
-mathematics but also in computer science and in some of the more
-technical corners of philosophy. Certainly for the purposes of
-formulating and proving results about the semantics and proof theory
-of logic and the foundation of computability it is essential to have a
-language in which to do this. For instance, we will talk about sets
-of expressions, relations of consequence and provability,
-interpretations of predicate symbols (which turn out to be relations),
-computable functions, and various relations between and constructions
-using these. It will be good to have shorthand symbols for
-these, and think through the general properties of sets, relations,
-and functions in order to do that. If you are not used to thinking
-mathematically and to formulating mathematical proofs, then think of
-the first part on set theory as a training ground: all the basic
-definitions will be given, and we'll give increasingly complicated
-proofs using them. Note that understanding these proofs---and being
-able to find and formulate them yourself---is perhaps more important
-than understanding the results, and especially in the first part, and
-especially if you are new to mathematical thinking, it is important
-that you think through the examples and problems.
+全书材料分为三个部分。\Olref[sfr][][]{part} 关注集合论。
+逻辑和元逻辑在历史上与所谓的"数学基础"联系非常紧密。
+数学基础探讨的是像整数、有理数、实数、函数、空间等数学对象最终应如何理解。
+集合论提供了一种答案（还有其他答案），因此集合论和逻辑长期以来一直被并行研究。
+集合、关系和函数在任何形式化研究中也无处不在，不仅在数学中，在计算机科学以及哲学中一些技术性更强的角落也是如此。
+当然，为了表述和证明关于逻辑的语义、证明论以及可计算性基础的结果，拥有一套用以完成这些工作的语言是至关重要的。
+例如，我们将讨论表达式的集合、后承关系与可证性关系、谓词符号的解释（它们实际上是关系）、可计算函数，以及它们之间的各种关系和利用它们进行的构造。
+为此，为这些对象配备简记符号，并想清楚集合、关系和函数的一般性质，将大有裨益。
+如果你还不习惯数学思维和表述数学证明，那么请把第一部分关于集合论的内容看作一个训练场：所有基本定义都会给出，并且我们将使用它们给出越来越复杂的证明。
+请注意，理解这些证明——以及能够自己发现和表述它们——可能比理解结果本身更为重要，特别是在第一部分，尤其是如果你刚接触数学思维，仔细思考例题和习题是非常重要的。
 
-In the first part we will establish one important result, however.
-This result---Cantor's theorem---relies on one of the most striking
-examples of conceptual analysis to be found anywhere in the sciences,
-namely, Cantor's analysis of infinity. Infinity has puzzled
-mathematicians and philosophers alike for centuries. No-one knew how
-to properly think about it. Many people even thought it was a mistake
-to think about it at all, that the notion of an infinite object or
-infinite collection itself was incoherent. Cantor made infinity into
-a subject we can coherently work with, and developed an entire theory
-of infinite collections---and infinite numbers with which we can
-measure the sizes of infinite collections---and showed that there are
-different levels of infinity. This theory of ``transfinite'' numbers
-is beautiful and intricate, and we won't get very far into it; but we
-will be able to show that there are different levels of infinity,
-specifically, that there are ``countable'' and ``uncountable'' levels
-of infinity. This result has important applications, but it is
-also really the kind of result that any self-respecting mathematician,
-computer scientist, or philosopher should know.
+不过，在第一部分中，我们将确立一个重要的结果。
+这个结果——Cantor（康托尔）定理——依赖于科学领域中最引人注目的概念分析范例之一，即Cantor对无限的分析。
+几个世纪以来，无限一直困扰着数学家和哲学家。没有人知道该如何正确地思考它。
+许多人甚至认为思考无限本身就是一个错误，认为无限对象或无限集合这一概念本身就是不自洽的。
+Cantor将无限变成了我们可以自洽地处理的对象，并发展出了一整套关于无限集合的理论——以及我们可以用来度量无限集合大小的无限数——并且证明了存在不同层次的无限。
+这套关于"超限"数的理论优美而精妙，我们不会深入探讨；
+但我们将能够证明，确实存在不同层次的无限，具体来说，存在"可数的"和"不可数的"无限层次。
+这一结果有重要的应用，同时也是任何一位有自尊心的数学家、计算机科学家或哲学家都应该了解的那类成果。
 
-In \olref[fol][][]{part} we turn to first-order logic. We will define the
-language of first-order logic and its semantics, i.e., what
-first-order structures are and when a sentence of first-order logic is
-true in a structure. This will enable us to do two important things:
-(1)~We can define, with mathematical precision, when a sentence is a
-logical consequence of another. (2)~We can also consider how the
-relations that make up a first-order structure are
-described---characterized---by the sentences that are true in them.
-This in particular leads us to a discussion of the axiomatic method,
-in which sentences of first-order languages are used to characterize
-certain kinds of structures. Proof theory will occupy us next, and we
-will consider the original version of the sequent calculus and natural
-deduction as defined in the 1930s by Gerhard Gentzen. (Your instructor
-may choose to cover only one, then any reference to ``derivations''
-and ``provability'' will mean whatever system they chose.) The
-semantic notion of consequence and the syntactic notion of provability
-give us two completely different ways to make precise the idea that a
-sentence may follow from some others. The soundness and completeness
-theorems link these two characterization. In particular, we will prove
-G\"odel's completeness theorem, which states that whenever a sentence
-is a semantic consequence of some others, there it is also provable
-from them. An equivalent formulation is: if a collection of sentences
-is consistent---in the sense that nothing contradictory can be proved
-from them---then there is a structure that makes all of them true.
+在\olref[fol][][]{part}中，我们将转向一阶逻辑。我们将定义一阶逻辑的语言及其语义，即一阶结构是什么，以及一个一阶逻辑语句何时在一个结构中为真。
+这将使我们能够做两件重要的事情： (1)~我们可以以数学的精确性定义一个语句何时是另一个语句的逻辑后承。 (2)~我们还可以考虑，构成一个一阶结构的关系是如何由在其中为真的语句描述——或者说，刻画——的。
+这尤其将我们引向对公理化方法的讨论，即使用一阶语言的语句来刻画某些类型的结构。
+接下来我们将讨论证明论，并考察Gerhard Gentzen（根岑）在20世纪30年代定义的相继式演算和自然演绎的原始版本。
+（你的老师可能只选择讲解其中一个，那么凡涉及"推导"和"可证性"之处，均指他们所选的那个系统。）
+语义的后承概念与语法的可证性概念，为我们精确理解"一个语句可以从其他语句得出"这一想法提供了两种完全不同的方式。
+可靠性与完备性定理将这两种刻画联系了起来。具体来说，我们将证明G\"odel（哥德尔）的完备性定理，该定理指出：每当一个语句是另一些语句的语义后承时，它也可由它们证明。
+一个等价的表述是：如果一个语句集合是一致的——意思是无法从它们证明任何矛盾——那么存在一个结构使所有这些语句都为真。
 
-The second formulation of the completeness theorem is perhaps the more
-surprising. Around the time G\"odel proved this result (in 1929), the
-German mathematician David Hilbert famously held the view (which builds on a similar view of the leading French mathematician Henri Poincar\'e) that
-consistency (i.e., freedom from contradiction) is all that mathematical
-existence requires. In other words, whenever a mathematician can
-coherently describe a structure or class of structures, then they
-should be be entitled to believe in the existence of such structures.
-At the time, many found this idea preposterous: just because you can
-describe a structure without contradicting yourself, it surely does
-not follow that such a structure actually exists. But that is exactly
-what G\"odel's completeness theorem says. In addition to this
-paradoxical---and certainly philosophically intriguing---aspect, the
-completeness theorem also has two important applications which allow
-us to prove further results about the existence of structures which
-make given sentences true. These are the compactness and the
-L\"owenheim-Skolem theorems.
+完备性定理的第二种表述或许更令人惊讶。在G\"odel证明这个结果（1929年）前后，德国数学家David Hilbert（希尔伯特）曾持有一个著名观点（该观点建立在法国领军数学家Henri Poincar\'e（庞加莱）的类似看法之上），即一致性（也就是无矛盾性）就是数学存在性所要求的全部。
+换句话说，只要数学家能自洽地描述一个结构或一类结构，那么他们就有权相信这类结构是存在的。
+当时，许多人觉得这个想法很荒谬：仅仅因为你可以在不自相矛盾的情况下描述一个结构，显然不能推出这样的结构实际存在。
+但这恰恰是G\"odel的完备性定理所断言的。
+除了这个悖论性的——无疑在哲学上引人入胜——的方面之外，完备性定理还有两个重要的应用，它们允许我们进一步证明关于使给定语句为真的结构的存在性的结果。
+这就是紧致性定理和L\"owenheim-Skolem定理。
 
-In \cref{incompleteness}, we will present (in
-\olref[inc][inp][]{chap}) what have come to be called the
-\emph{G\"odel Incompleteness Theorems}, two results which constitute
-G\"odel's second great contribution to mathematical
-logic.\footnote{Believe it or not, there was a third, the proof of the
-relative consistency of the Axiom of Choice and the Generalised
-Continuum Hypothesis with the standard axioms of set theory. Any one
-of these contributions would have made G\"odel a giant of the
-subject!{}} We mentioned Hilbert above. Another of his extremely
-important contributions (from the 1890s) was the insistence on the
-axiomatic method, above all for studying independence proofs and
-relative consistency, and through this a much more refined notion of
-logical dependency than had been possible hitherto.\footnote{Pursuit
-of the axiomatic method was what led to the ``consistency
-$\Rightarrow$ existence'' thesis mentioned in the previous paragraph.}
-Part of the idea behind this was  that theories (like that for natural
-number arithmetic or for sets) must be formulated by finitely
-presented axiom systems which are `self-standing' in the sense that
-all the major arithmetical or set-theoretical facts can be derived in
-the axiom systems. This leads to two questions in particular:
+在 \cref{incompleteness} 中，我们将在
+\olref[inc][inp][]{chap} 介绍所谓的
+\emph{G\"odel（哥德尔）不完全性定理}，这两个结果构成了
+G\"odel 对数理逻辑的第二个伟大贡献。\footnote{信不信由你，还有第三个贡献，即选择公理和广义连续统假设相对于集合论标准公理的相对一致性的证明。这些贡献中的任何一个都足以使 G\"odel 成为这一领域的巨人！} 我们前文提到了 Hilbert。他另一个极其重要的贡献（产生于 19 世纪 90 年代）是坚持公理化方法，尤其是用于研究独立性证明和相对一致性，并由此获得了一种比以往精细得多的逻辑依赖性概念。\footnote{对公理化方法的追求正是上一段提到的“一致性 $\Rightarrow$ 存在”论点的由来。} 这背后的部分思想是：像自然数算术或集合论这样的理论，必须由有限呈现的公理系统来表述，这些系统是“自足的”，即所有主要的算术或集合论事实都可以在公理系统中推导出来。这特别引出了两个问题：
+
 \begin{enumerate}
-  \item How can we show that the axiom system we give are
-  \emph{consistent}, i.e., do not lead to the proof of contradictions?
-  (Logic itself doesn't, as we will show, but special axioms for
-  numbers or sets added to the logical system might.)
-  \item Are there truths, about numbers say, which cannot be derived
-  from a natural axiom system for arithmetic? We can derive some
-  truths, for example \[2+2=4\] or \[\forall m, n (m+n=n+m),\]  but
-  do  we know that we have captured \emph{all} of them?
+  \item 我们如何证明所给出的公理系统是\emph{一致的}，即不会推出矛盾？（逻辑本身不会，正如我们将要证明的，但添加到逻辑系统中的关于数或集合的特殊公理可能会。）
+  \item 比如说，是否存在关于数的真理，无法从一套自然的算术公理系统中推导出来？我们可以推导出一些真理，例如 \[2+2=4\] 或 \[\forall m, n (m+n=n+m),\]，但我们是否知道我们已经捕获了\emph{所有}真理？
 \end{enumerate}
-G\"odel's work relates directly to these questions. 
 
-\emph{The First Incompleteness Theorem} addresses the second question.
-What G\"odel invented was a very powerful general method for the
-construction of \emph{self-referential sentences} within  the
-languages concerned (provided they have certain mechanisms available),
-for instance, sentences of the restricted language of arithmetic (see
-\olref[inc][art][]{chap}). To be more specific, we will be able to
-form sentences in the special first-order arithmetical language which
-talk about themselves, and can describe fundamental properties that
-they possess. This is analogous to the following sentence of English:
-`I am a sentence  which  contains four commas, consists of 25 words,
-and, when written and set on Richard Zach's  computer,  appears in
-black type'. If we've counted the number of commas and words
-correctly, this sentence is quite straightforwardly \emph{true}.
-G\"odel's method allowed for the formulation of a perfectly ordinary
-(logically fairly simple, but rather long) sentence of arithmetic
-which says something like `I am not deducible from the system of
-axioms for arithmetic', and it is easy to show that (given that the
-axiom system for arithmetic is consistent ---~and we will be in rather
-serious  trouble if that isn't correct) this sentence must be
-\emph{true}, and that therefore what it says must be correct, from
-which it follows that it is indeed not deducible. Note this:
-\emph{true} but \emph{not deducible}!{} Hence, arithmetic is
-\emph{incomplete}. G\"odel's procedure gives us a general recipe for
-the production of true but underivable sentences for a very wide range
-of theories and their languages. For instance, suppose, out of
-frustration,  we add the particular, underivable  sentence just
-described as a new axiom to get a new theory of arithmetic, then we
-can use the very same procedure to produce a \emph{new} sentence which
-is true and cannot be derived from that  expanded axiom system. It is
-the \emph{general} nature of the procedure (what we now usually mean
-when we refer to `G\"odel's First Incompleteness Theorem') which gives
-the G\"odel result its enormous power, and ensures that it does not
-present a mere curio, but a genuine philosophical dilemma.
+G\"odel 的工作直接与这些问题相关。
 
-Closely related to G\"odel's First Incompleteness Theorem is
-\emph{Tarski's Theorem} on the undefinability of truth for reasonable
-axioms systems for arithmetic using the usual language, and this we
-will also look at. We mentioned above the  crucial importance of the
-assumption of the consistency of arithmetic. What Tarski's saw was
-that if truth \emph{were} definable within  the language of
-arithmetic, then we could show that arithmetic would in fact be
-\emph{inconsistent}, since we could in effect produce in the language
-of arithmetic a version of a so-called `Liar sentence', a sentence
-which is contradictory since it must be simultaneously both true and
-false, just like the sentence of ordinary English `This sentence is
-not true'.  (The parallel with the standard G\"odel sentence which
-says something like `This sentence is not derivable' is conscious and
-deliberate on G\"odel's part. The G\"odel sentence is a sentence of
-the language of arithmetic, the Liar sentence is not.)
+\emph{第一不完全性定理}针对第二个问题。G\"odel 发明的是一种非常强大的通用方法，用于在所涉及的语言中（前提是它们具备某些机制）构造\emph{自指语句}，例如，受限的算术语言中的语句（参见
+\olref[inc][art][]{chap}）。更具体地说，我们将能够在特殊的一阶算术语言中形成谈论自身的语句，并能描述它们所具有的基本性质。这类似于下面的英语句子：“我是一个包含四个逗号、由 25 个单词组成的句子，并且当写在 Richard Zach 的电脑上时，以黑色字体显示”。如果我们正确数清了逗号和单词的数量，这个句子显然为\emph{真}。G\"odel 的方法使得我们能够构造出一个完全普通的（逻辑上相当简单，但相当长的）算术语句，它说的是类似“我不能从算术公理系统中推导出来”这样的话，并且容易证明（假设算术公理系统是一致的——如果这不正确，我们将陷入相当严重的麻烦）这个句子必定为\emph{真}，因此它所说的必定正确，由此可得它确实不可推导。注意这一点：\emph{真}但\emph{不可推导}！因此，算术是\emph{不完全的}。G\"odel 的程序为我们提供了一种一般方案，可以为非常广泛的理论及其语言产生真但不可推导的语句。例如，假设出于挫败感，我们将刚刚描述的那个特定的不可推导语句作为新公理添加到算术中，得到一个新的算术理论，那么我们可以使用完全相同的程序产生一个\emph{新的}语句，它是真的且无法从那个扩展的公理系统中推导出来。正是程序的这种\emph{一般性}（我们现在通常所指的“G\"odel 第一不完全性定理”）赋予了 G\"odel 结果巨大的威力，并确保它不仅仅是一个奇闻，而是一个真正的哲学困境。
 
-G\"odel  produced a fairly straightforward (but difficult to execute)
-modification of the proof  for the First Theorem which he used to show
-the following: the consistency of arithmetic can only be shown by a
-theory which has \emph{stronger} theoretical resources than those
-available to arithmetic itself. This (expressed in the \emph{Second
-Incompleteness Theorem}) addresses the \emph{first} question posed
-above, for in a sense it says that we cannot really prove the
-consistency of arithmetic at all, at least, not  if we are doing so to
-guarantee the `health and safety' of formal arithmetic.  (Of course,
-there are other reasons for studying the inferential structure of
-theories, and thus consistency, and these have been widely pursued.)
-Again, G\"odel's Second Incompleteness Theorem   has extraordinary
-range, and applies to a very wide swathe of ordinary, working
-theories, the theory of sets among them. 
+与 G\"odel 第一不完全性定理密切相关的是\emph{Tarski（塔斯基）定理}，该定理断言：对于使用通常语言的合理的算术公理系统而言，真是不可定义的。我们也将考察这一结果。我们之前提到了算术一致性假设的关键重要性。Tarski 所洞察到的是，如果“真”在算术语言内部\emph{能够}被定义，那么我们就可以证明算术实际上会是\emph{不一致}的，因为我们将能够在算术语言中实质上构造出一个所谓的“说谎者语句”的版本，这个语句是自相矛盾的，因为它必须同时既真又假，正如日常英语中的句子“这句话不真”一样。（这与标准的 G\"odel 语句——大意是“这个句子不可推导”——之间的平行关系，是 G\"odel 本人有意为之的。G\"odel 语句是算术语言中的一个语句，而说谎者语句则不是。）
 
-Closely related to the both the First and the Second Theorems is a
-result called \emph{L\"ob's Theorem}, which we will also look at
-briefly. We will also examine another result which in a way presages
-G\"odel's First Incompleteness Theorem, often called \emph{Skolem's
-Theorem}, which concerns the austere and strange world of non-standard
-models of arithmetic. These contain the usual natural numbers, which
-behave exactly as we expect them to behave, but much (very much!{})
-more,  namely a vast multiplicity of what we call \emph{non-standard
-numbers} with very odd structure (see \cref{mod:chap}.) 
+G\"odel 对第一定理的证明作了一个相当直接（但执行起来很困难）的修改，并用它来证明以下结论：算术的一致性只能由一个拥有比算术本身\emph{更强}理论资源的理论来证明。这（体现在\emph{第二不完全性定理}中）回答了上面提出的\emph{第一个}问题，因为在某种意义上它表明，我们根本无法真正证明算术的一致性，至少，如果我们这样做是为了保证形式算术的“健康与安全”的话，是做不到的。（当然，研究理论的推理结构——进而研究一致性——还有其他理由，这些已被广泛探索。）同样，G\"odel 第二不完全性定理具有极其广泛的范围，适用于一大批普通的、实际使用的理论，集合论便是其中之一。
 
-In sum, we will see that these results (some of the most important
-theorems of  twentieth-century logic) tells us a good deal about the
-power and also the limitations of first-order logic. (But what's the
-alternative to first-order logic? This is touched on in
-\olref[fol][byd][]{chap}.) From  these central results, highly
-technical in nature, wider \emph{philosophical} consequences start to
-flow, certainly important consequences for the philosophy of
-mathematics, for instance concerning  the role of proof and
-provability, and the connections between proof and truth, and for
-Hilbert's programme, some of which we touched on above, but also
-consequences for philosophy more generally, for instance for the
-computational theory of mind, for the theory of truth (and thus
-philosophy of language), and consequences concerning the nature of
-mathematical and scientific theories. 
+与第一和第二定理都密切相关的是一个称为\emph{L\"ob（勒布）定理}的结果，我们也将简要地考察。我们还将考察另一个结果，它在某种意义上预示了 G\"odel 第一不完全性定理，通常被称为\emph{Skolem（斯科伦）定理}，它关注的是算术的非标准模型那个冷峻而奇异的世界。这些模型包含了通常的自然数，它们的行为完全符合我们的预期，但还包含多得多的（非常多！{}）内容，即大量所谓的\emph{非标准数}，它们具有非常奇特的结构（参见 \cref{mod:chap}。）
+
+总而言之，我们将看到，这些结果（二十世纪逻辑学中一些最重要的定理）充分说明了一阶逻辑的威力及其局限性。（但一阶逻辑的替代方案是什么？这将在 \olref[fol][byd][]{chap} 中涉及。）从这些本质上高度技术性的核心结果中，更广泛的\emph{哲学}后果随之涌现，这无疑对数学哲学产生了重要影响，例如关于证明和可证性的作用、证明与真之间的联系，以及对 Hilbert 规划的影响（其中一些我们在上面已经提到），而且也对更一般的哲学产生了后果，例如对心智计算理论、真理论（从而对语言哲学）的影响，以及关于数学和科学理论本质的后果。
 
 \bigskip
 
-\noindent The material here is very much cumulative, and the results
-emerge slowly. Hence, it's important both to keep up, and to be
-patient. Believe us, it's worth it!{} And remember all the time, that
-what we're doing is really proving things in an \emph{informal} way
-about \emph{formal} languages and !!{derivation} systems, even though it helps
-to be familiar with doing \emph{formal} proofs (following rules of
-proof) and with the semantics of first-order languages. 
+\noindent 这里的材料是高度累积性的，结果是慢慢显现的。因此，跟上进度并保持耐心都很重要。相信我们，这是值得的！{}并且要始终记住，我们正在做的，实际上是以\emph{非形式}的方式证明关于\emph{形式}语言和推导系统的事物，尽管熟悉进行\emph{形式}证明（遵循证明规则）以及一阶语言的语义会对此有帮助。
 
-Logic at this level is a difficult but very beautiful subject, and is
-very different in nature and approach from the subject of logic as
-presented in your first logic course. Being good at that does not, by
-any means, ensure you will be good at this. What this requires is,
-above all, not mathematical knowledge, or even mathematical ability,
-but rather something which we might, rather obscurely, refer to as
-\emph{mathematical apitude}. 
+这个层次的逻辑是一门困难但非常优美的学科，其性质和方法与你第一门逻辑课程中呈现的逻辑学科非常不同。擅长那一门课绝不意味着你就能擅长这一门。这首先需要的不是数学知识，甚至不是数学能力，而是某种我们可以有些含糊地称之为\emph{数学资质}的东西。
 
-Let us begin.
+让我们开始吧。
 
 % \section*{Acknowledgments}
 
