@@ -1,0 +1,63 @@
+name: Build and release PDF
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pdf-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          submodules: recursive
+
+      - name: Trust the workspace
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE/OpenLogic"
+
+      - name: Build the Chinese edition with LuaLaTeX
+        run: make il-screen.pdf il-print.pdf il-print-cover.pdf
+
+      - name: Report build failure
+        if: failure()
+        run: |
+          {
+            echo '```text'
+            tail -n 120 il-screen.log 2>/dev/null || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Package PDFs
+        run: |
+          mkdir -p dist
+          cp il-screen.pdf dist/intermediate-logic-zh-screen.pdf
+          cp il-print.pdf dist/intermediate-logic-zh-print.pdf
+          cp il-print-cover.pdf dist/intermediate-logic-zh-print-cover.pdf
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: intermediate-logic-zh
+          path: dist/*.pdf
+
+      - name: Release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: 中级逻辑 Build ${{ github.run_number }}
+          files: dist/*.pdf
+          generate_release_notes: true

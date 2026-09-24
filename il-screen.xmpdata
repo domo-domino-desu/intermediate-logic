@@ -1,8 +1,8 @@
-\Title{Intermediate Logic: An Open Introduction}
+\Title{中级逻辑：开放导论}
 \Author{Michael Hallett\sep Richard Zach\sep Open Logic Project}
-\Language{en-US}
-\Keywords{logic\sep set theory\sep completeness\sep incompleteness\sep Kurt Gödel\sep
-recursive functions}
+\Language{zh-CN}
+\Keywords{逻辑\sep 集合论\sep 完备性\sep 不完全性\sep Kurt Gödel\sep
+递归函数}
 \Copyright{CC BY 4.0}
 \PublicationType{book}
 \URLlink{https://github.com/rzach/intermediate-logic}

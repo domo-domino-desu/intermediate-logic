@@ -15,6 +15,13 @@ git submodule update --remote --recursive OpenLogic
 git add OpenLogic
 ```
 
+The Chinese edition needs LuaLaTeX (the text is typeset with `ctex` and
+New Computer Modern), so build it with `make`, which runs
+`latexmk -lualatex`, rather than with `pdflatex`. Every push to
+`master` builds `il-screen.pdf`, `il-print.pdf` and
+`il-print-cover.pdf` in GitHub Actions and attaches them to a
+[release](https://github.com/domo-domino-desu/intermediate-logic/releases).
+
 ![Book Cover](https://builds.openlogicproject.org/courses/intermediate-logic/il.png)
 
 Textbook on basic set theory, first-order logic, and Gödel's

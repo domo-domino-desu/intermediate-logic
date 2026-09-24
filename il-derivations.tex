@@ -193,9 +193,9 @@ $\eq[(b'+a)][\Obj 0]$（以及公理 $Q_2$、$Q_6$）推出 $\lfalse$。
 \end{proof}
 
 在 \olref[inc][inp][ros]{thm:rosser} 的证明中，我们将 $\ORProv(y)$ 定义为 \[\lexists[x][(\OPrf(x, y) \land \lforall[z][(z < x
-    \lif \lnot \ORefut(z, y))])].\]，其中 $\OPrf(x,y)$ 是在 $\Th{Q}$ 中表示 $\Th{T}$（一个一致、可公理化的 $\Th{Q}$ 扩张）的证明关系的公式，而 $\ORefut(z, y)$ 是表示反驳关系的公式。这意味着，如果 $n$ 是 $!A$ 的一个证明的哥德尔数，那么 $\Th{Q} \Proves
+    \lif \lnot \ORefut(z, y))])].\]其中 $\OPrf(x,y)$ 是在 $\Th{Q}$ 中表示 $\Th{T}$（一个一致、可公理化的 $\Th{Q}$ 扩张）的证明关系的公式，而 $\ORefut(z, y)$ 是表示反驳关系的公式。这意味着，如果 $n$ 是 $!A$ 的一个证明的Gödel数，那么 $\Th{Q} \Proves
 \OPrf(\num{n}, \gn{!A})$，否则 $\Th{Q} \Proves
-\lnot\OPrf(\num{n}, \gn{!A})$。类似地，如果 $n$ 是 $\lnot !A$ 的一个证明的哥德尔数，那么 $\Th{Q} \Proves \ORefut(\num{n},
+\lnot\OPrf(\num{n}, \gn{!A})$。类似地，如果 $n$ 是 $\lnot !A$ 的一个证明的Gödel数，那么 $\Th{Q} \Proves \ORefut(\num{n},
 \gn{!A})$，否则 $\Th{Q} \Proves \lnot\ORefut(\num{n},
 \gn{!A})$。我们使用对角线引理找到一个语句 $!R$，使得 $\Th{Q} \Proves !R \liff \lnot \ORProv(\gn{!R})$。Rosser 定理断言 $\Th{T} \Proves/ !R$ 且 $\Th{T} \Proves/ \lnot !R$。两个结论都是间接证明的：我们证明，如果 $\Th{T} \Proves !R$，则 $\Th{T}$ 不一致，即 $\Th{T} \Proves \lfalse$；同样，如果 $\Th{T} \Proves \lnot !R$，也是如此。
 
@@ -222,10 +222,10 @@ $\eq[a][\Obj 0] \lor \dots \lor \eq[a][\num{n-1}]$：
 
 现在，为证 $\Th{T} \Proves/ !R$，我们假设 $\Th{T}
 \Proves !R$（有一个推导~$\delta$），并证明这将导致 $\Th{T}$ 不一致。
-令 $n$ 为~$\delta$ 的哥德尔数。由于 $\OPrf$ 在~$\Th{Q}$ 中表示证明关系，
+令 $n$ 为~$\delta$ 的Gödel数。由于 $\OPrf$ 在~$\Th{Q}$ 中表示证明关系，
 存在一个$\OPrf(\num{n},
 \gn{!R})$的推导~$\delta_1$。此外，因为假设 $\Th{T}$ 是一致的，
-所以没有 $k < n$ 是~$!R$ 的反驳的哥德尔数；于是对每个 $k < n$，都有 $\Th{Q} \Proves \lnot \ORefut(\num{k}, \gn{!R})$；令
+所以没有 $k < n$ 是~$!R$ 的反驳的Gödel数；于是对每个 $k < n$，都有 $\Th{Q} \Proves \lnot \ORefut(\num{k}, \gn{!R})$；令
 $\rho_k$ 为对应的推导。我们得到 $\ORProv(\gn{!R})$ 的一个推导：
 \begin{prooftree}\footnotesize
   \AxiomC{}
@@ -269,11 +269,11 @@ $\rho_k$ 为对应的推导。我们得到 $\ORProv(\gn{!R})$ 的一个推导：
 \lnot R$，我们将得到 $\Th{T} \Proves \lnot !R$，从而导致 $\Th{T}$ 不一致。
 
 现在来证 $\Th{T} \Proves/ \lnot !R$。再次假设 $\Th{T}$ 能证 $\lnot !R$。
-那么存在一个 $\lnot !R$ 的推导~$\rho$，其哥德尔数为 $m$（即~$!R$ 的一个反驳），
+那么存在一个 $\lnot !R$ 的推导~$\rho$，其Gödel数为 $m$（即~$!R$ 的一个反驳），
 于是由某个推导~$\rho_1$ 可得 $\Th{Q} \Proves
 \ORefut(\num{m}, \gn{!R})$。
 由于我们假设 $\Th{T}$ 是一致的，所以 $\Th{T} \Proves/ !R$。
-因此，对所有 $k$，$k$ 都不是~$!R$ 的推导的哥德尔数，
+因此，对所有 $k$，$k$ 都不是~$!R$ 的推导的Gödel数，
 从而对每个 $k$，由某个推导~$\pi_k$ 可得 $\Th{Q} \Proves \lnot
 \OPrf(\num{k}, \gn{!R})$。于是我们有：
   
